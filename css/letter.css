@@ -110,9 +110,15 @@
     padding: 0 10px 10px;
     display: flex;
     flex-direction: column;
-    /* "safe" falls back to start-alignment instead of clipping the top
-       when the text is too long to fit — short texts stay centered */
-    justify-content: safe center;
+}
+
+/* Auto margins center the text block when it's short; when it's too tall
+   to fit, they collapse to 0 so the text sits flush at the top and stays
+   fully reachable by scrolling (unlike justify-content: center, which can
+   clip the top of overflowing content with no way to scroll back to it). */
+.mini-card-text-inner {
+    width: 100%;
+    margin: auto 0;
 }
 
 /* Custom scrollbar for mini card text to look elegant */

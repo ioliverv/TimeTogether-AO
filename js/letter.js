@@ -65,7 +65,7 @@ function buildMiniCards(monthIndex = 0) {
                 <div class="watermark watermark-initials watermark-card">A & O</div>
             </div>
             <div class="mini-card-ornament">❦ ━━ ♡ ━━ ❦</div>
-            <div class="mini-card-text">${card.text}</div>
+            <div class="mini-card-text"><div class="mini-card-text-inner">${card.text}</div></div>
             <div class="mini-card-counter">${index + 1} / ${allCards.length}</div>
         `;
 
