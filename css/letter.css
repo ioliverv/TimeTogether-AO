@@ -108,6 +108,11 @@
     flex: 1;
     overflow-y: auto;
     padding: 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    /* "safe" falls back to start-alignment instead of clipping the top
+       when the text is too long to fit — short texts stay centered */
+    justify-content: safe center;
 }
 
 /* Custom scrollbar for mini card text to look elegant */
