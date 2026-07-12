@@ -57,7 +57,6 @@
     .date-unlock-label { font-size: 1.35rem; margin-bottom: 12px; }
     .date-error { font-size: 1rem; }
 
-    .mini-cards-container { min-height: 280px; }
     .mini-card { max-width: 95%; padding: 35px 22px; }
     .mini-card-text { font-size: 1.15rem; line-height: 1.7; }
     .mini-card-text .first-letter { font-size: 2.8rem; }
@@ -89,7 +88,7 @@
     }
 
     /* Keep card, prompt and countdown together as one centered group */
-    .scene-letter { justify-content: center; gap: 20px; padding: 4vh 16px; }
+    .scene-letter { --mini-card-height: 48vh; justify-content: center; gap: 20px; padding: 4vh 16px; }
     .tap-prompt { margin-top: 0; }
     .letter-countdown { margin-top: 0; }
 
@@ -151,7 +150,7 @@
     .month-card-hint { font-size: 1.2rem; margin-top: 10px; }
 
     .mini-card { max-width: 82vw; padding: 65px 55px; }
-    .mini-cards-container { max-width: 82vw; min-height: 450px; }
+    .mini-cards-container { max-width: 82vw; }
     .mini-card-text { font-size: 1.8rem; line-height: 1.8; }
     .mini-card-text .first-letter { font-size: 4.5rem; }
     .mini-card.card-closing .mini-card-text { font-size: 2.8rem; }
@@ -179,7 +178,7 @@
     .elegant-btn { padding: 21px 58px; font-size: 1rem; }
 
     /* Keep card, prompt and countdown together as one centered group */
-    .scene-letter { justify-content: center; gap: 35px; padding: 5vh 24px; }
+    .scene-letter { --mini-card-height: 52vh; justify-content: center; gap: 35px; padding: 5vh 24px; }
     .tap-prompt { margin-top: 0 !important; }
     .letter-countdown { margin-top: 0; }
 
@@ -250,7 +249,7 @@
     .month-card-hint { font-size: 1.15rem; margin-top: 10px; }
 
     .mini-card { max-width: 760px; padding: 55px 60px; }
-    .mini-cards-container { max-width: 760px; min-height: 400px; }
+    .mini-cards-container { max-width: 760px; }
     .mini-card-text { font-size: 1.7rem; line-height: 1.75; }
     .mini-card-text .first-letter { font-size: 4.2rem; }
     .mini-card.card-closing .mini-card-text { font-size: 2.6rem; }
@@ -277,7 +276,7 @@
     .elegant-btn { padding: 19px 54px; font-size: 0.95rem; }
 
     /* Keep card, prompt and countdown together as one centered group */
-    .scene-letter { justify-content: center; gap: 28px; padding: 4vh 30px; }
+    .scene-letter { --mini-card-height: 50vh; justify-content: center; gap: 28px; padding: 4vh 30px; }
     .tap-prompt { margin-top: 0 !important; }
     .letter-countdown { margin-top: 0; }
 
@@ -356,9 +355,9 @@
     .month-card-label { font-size: 0.55rem; }
     .month-card-hint { font-size: 0.75rem; margin-top: 4px; }
 
-    .scene-letter { padding: 15px 20px; }
-    .mini-cards-container { min-height: 65vh; margin: auto; }
-    .mini-card { max-width: 560px; padding: 28px 26px; max-height: 85vh; overflow-y: auto; }
+    .scene-letter { --mini-card-height: 65vh; padding: 15px 20px; }
+    .mini-cards-container { margin: auto; }
+    .mini-card { max-width: 560px; padding: 28px 26px; }
     .mini-card-text { font-size: 1.05rem; line-height: 1.55; }
     .mini-card-text .first-letter { font-size: 2.3rem; }
     .mini-card.card-closing .mini-card-text { font-size: 1.5rem; }

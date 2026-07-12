@@ -1,6 +1,7 @@
 /* ═══ SCENE 3 — LETTER (mini cards, tap to continue) ═══ */
 
 .scene-letter {
+    --mini-card-height: 60vh;
     padding: 20px;
     overflow: hidden;
     cursor: pointer;
@@ -14,11 +15,11 @@
     position: relative;
     width: 100%;
     max-width: 500px;
-    min-height: 300px;
+    height: var(--mini-card-height);
+    min-height: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mini-card {
@@ -57,7 +58,8 @@
 .mini-card {
     display: flex;
     flex-direction: column;
-    max-height: 75vh;
+    height: var(--mini-card-height);
+    min-height: 260px;
 }
 
 /* Paper wrinkle texture */
