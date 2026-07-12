@@ -16,7 +16,7 @@
     .mini-card-text .first-letter { font-size: 2.8rem; }
 
     .final-title { font-size: 2.8rem; }
-    .final-subtitle { font-size: 1rem; }
+    .final-subtitle { font-size: 2.1rem; padding: 25px 35px; line-height: 1.4; margin-bottom: 30px; }
     .final-countdown { gap: 12px; }
     .final-countdown .countdown-value { font-size: 2.6rem; }
     .final-countdown .countdown-separator { font-size: 1.8rem; margin-bottom: 16px; }
@@ -64,7 +64,7 @@
     .mini-card.card-greeting .mini-card-text { font-size: 2.4rem; }
 
     .final-title { font-size: clamp(2.2rem, 9vw, 2.9rem); }
-    .final-subtitle { font-size: 1rem; margin-bottom: 0; padding: 0 10px; }
+    .final-subtitle { font-size: 1.6rem; padding: 20px 25px; margin-bottom: 25px; line-height: 1.35; width: 92%; }
     .final-countdown { gap: 4px; flex-wrap: nowrap; }
     .final-countdown .countdown-value { font-size: clamp(1.6rem, 7vw, 2.7rem); }
     .final-countdown .countdown-separator { font-size: clamp(1.4rem, 6vw, 1.9rem); margin-bottom: 12px; }

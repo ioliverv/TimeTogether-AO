@@ -171,6 +171,27 @@ body {
     transform: translateX(-50%);
 }
 
+.watermark-letter {
+    bottom: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    white-space: nowrap;
+    text-align: center;
+}
+
+@media (max-width: 1400px) {
+    .watermark-letter {
+        bottom: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .watermark-letter {
+        bottom: 150px;
+    }
+}
+
 .scene-months .watermark-initials {
     top: 20px;
     right: 25px;

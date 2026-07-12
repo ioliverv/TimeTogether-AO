@@ -8,14 +8,19 @@ let allCards = [];
 // Build mini cards for a month (index into monthlyLetters)
 function buildMiniCards(monthIndex = 0) {
     const letter = monthlyLetters[monthIndex];
-    allCards = [
-        { text: 'Holaa Preciosa ❤️', isGreeting: true },
+    allCards = [];
+    
+    if (letter.greeting) {
+        allCards.push({ text: letter.greeting, isGreeting: true });
+    }
+
+    allCards.push(
         ...letter.paragraphs.map(text => ({ text, isClosing: false })),
         {
             text: 'Con todo mi cariño,<span class="letter-signature-name">Oliver</span><span class="letter-signature-sub">Para siempre tuyo 🤍</span>',
             isClosing: true
         }
-    ];
+    );
 
     if (letter.month === 1) {
         allCards.push({

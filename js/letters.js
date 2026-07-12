@@ -4,9 +4,9 @@
 const monthlyLetters = [
     {
         month: 1,
+        greeting: 'Holaa Preciosa ❤️',
         paragraphs: [
-            '<span class="first-letter">H</span>ola, preciosa.',
-            'Hoy cumplimos nuestro primer mes de novios y, aunque solo sea un mes, para mí significa mucho más. Me hace muy feliz poder decir que eres mi novia y pensar que ahora existe un "nosotros". La verdad, me ha encantado todo desde que empezamos a conocernos.',
+            '<span class="first-letter">H</span>oy cumplimos nuestro primer mes de novios y, aunque solo sea un mes, para mí significa mucho más. Me hace muy feliz poder decir que eres mi novia y pensar que ahora existe un "nosotros". La verdad, me ha encantado todo desde que empezamos a conocernos.',
             '¿Sabes? Desde que llegaste a mi vida rompiste muchas de las reglas que yo mismo me había puesto. Siempre pensé que era muy exigente, que era complicado encontrar a alguien con quien realmente quisiera compartir mi vida... hasta que apareciste tú. Sin darme cuenta, fuiste cambiando todo eso. Me hiciste entender que no era difícil enamorarme; simplemente estaba esperando a la persona correcta.',
             'Por eso nunca dejé de intentar conquistarte. Cada detalle, cada salida y cada momento contigo valían completamente la pena, porque desde el primer día te convertiste en mi excepción.',
             'Hoy apenas cumplimos un mes, pero <strong>no quiero contar los meses que llevamos juntos; quiero que llegue el día en que perdamos la cuenta porque nunca dejamos de elegirnos.</strong> Quiero seguir tomándote de la mano, seguir riéndome contigo, seguir viéndote cumplir tus sueños y que tú también veas los míos. Quiero que, pase lo que pase, siempre podamos decir: "Aquí seguimos, tú y yo."',
