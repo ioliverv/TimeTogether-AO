@@ -5,6 +5,14 @@ let miniCardsBuilt = false;
 let isTransitioning = false;
 let allCards = [];
 
+// Keep the container as tall as the card it's actually showing, so the
+// tap-prompt/countdown below it never overlaps a taller-than-usual card
+// (mini cards are position:absolute and don't otherwise grow their parent).
+function syncCardsContainerHeight(cardEl) {
+    if (!cardEl) return;
+    miniCardsContainer.style.height = `${cardEl.offsetHeight}px`;
+}
+
 // Build mini cards for a month (index into monthlyLetters)
 function buildMiniCards(monthIndex = 0) {
     const letter = monthlyLetters[monthIndex];
@@ -72,9 +80,11 @@ function buildMiniCards(monthIndex = 0) {
         miniCardsContainer.appendChild(div);
     });
 
+    const initialCards = miniCardsContainer.querySelectorAll('.mini-card');
+    syncCardsContainerHeight(initialCards[0]);
+
     setTimeout(() => {
-        const cards = miniCardsContainer.querySelectorAll('.mini-card');
-        if (cards[0]) cards[0].classList.add('active');
+        if (initialCards[0]) initialCards[0].classList.add('active');
     }, 300);
 
     miniCardsBuilt = true;
@@ -88,13 +98,21 @@ function advanceCard() {
     const cards = miniCardsContainer.querySelectorAll('.mini-card');
 
     if (currentCardIndex < allCards.length - 1) {
-        cards[currentCardIndex].classList.remove('active');
-        cards[currentCardIndex].classList.add('exit');
+        const outgoing = cards[currentCardIndex];
+        outgoing.classList.remove('active');
+        outgoing.classList.add('exit');
 
         currentCardIndex++;
+        const incoming = cards[currentCardIndex];
+
+        // Cover both cards' heights while they crossfade so neither one
+        // overlaps the tap-prompt/countdown below the container.
+        miniCardsContainer.style.height =
+            `${Math.max(outgoing.offsetHeight, incoming.offsetHeight)}px`;
 
         setTimeout(() => {
-            cards[currentCardIndex].classList.add('active');
+            incoming.classList.add('active');
+            syncCardsContainerHeight(incoming);
             isTransitioning = false;
         }, 400);
     } else {
@@ -105,6 +123,14 @@ function advanceCard() {
         }, 800);
     }
 }
+
+// Re-measure on rotation/resize (e.g. mobile keyboard closing) so the
+// container keeps matching the currently visible card's real height.
+window.addEventListener('resize', () => {
+    if (!miniCardsBuilt || isTransitioning) return;
+    const cards = miniCardsContainer.querySelectorAll('.mini-card');
+    syncCardsContainerHeight(cards[currentCardIndex]);
+});
 
 const tapButton = document.getElementById('tap-prompt');
 if (tapButton) {
