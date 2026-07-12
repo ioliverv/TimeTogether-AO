@@ -5,13 +5,16 @@ const monthlyLetters = [
     {
         month: 1,
         paragraphs: [
-            '<span class="first-letter">D</span>esde que te conocí, supe que contigo valía la pena cada detalle. Algo en ti me hizo querer quedarme, querer intentar, querer dar todo de mí.',
-            'Poco a poco te fuiste volviendo mi excepción a muchas reglas que yo tenía. Esas barreras que había puesto, contigo se cayeron solas. Y sin darme cuenta, me fui enamorando de ti.',
-            'De tu risa, de tu forma de ser, de cómo me haces sentir que con nosotros todo es diferente. Contigo las cosas se sienten bien, se sienten bonitas, se sienten reales.',
-            'Hoy apenas cumplimos un mes, pero quiero que perdamos la cuenta y luego sean años. Y que de los años también perdamos la cuenta, para solo saber que somos nosotros de hoy en adelante. Que esto se convierta en recuerdos, en planes, en una historia bonita de tú y yo que apenas estamos comenzando a escribir.',
-            'Quiero seguir descubriendo todo lo que podemos ser juntos. Quiero estar ahí en tus días buenos y en los no tan buenos. Quiero ser tu apoyo, tu compañero, tu lugar seguro.',
-            'Te quiero mucho, Preciosa. Gracias por ser mi novia. Gracias por elegirme, por quedarte y por hacer que cada día contigo valga la pena.',
-            'Feliz primer mes 🤍'
+            '<span class="first-letter">H</span>ola, preciosa.',
+            'Hoy cumplimos nuestro primer mes de novios y, aunque solo sea un mes, para mí significa mucho más. Me hace muy feliz poder decir que eres mi novia y pensar que ahora existe un "nosotros". La verdad, me ha encantado todo desde que empezamos a conocernos.',
+            '¿Sabes? Desde que llegaste a mi vida rompiste muchas de las reglas que yo mismo me había puesto. Siempre pensé que era muy exigente, que era complicado encontrar a alguien con quien realmente quisiera compartir mi vida... hasta que apareciste tú. Sin darme cuenta, fuiste cambiando todo eso. Me hiciste entender que no era difícil enamorarme; simplemente estaba esperando a la persona correcta.',
+            'Por eso nunca dejé de intentar conquistarte. Cada detalle, cada salida y cada momento contigo valían completamente la pena, porque desde el primer día te convertiste en mi excepción.',
+            'Hoy apenas cumplimos un mes, pero <strong>no quiero contar los meses que llevamos juntos; quiero que llegue el día en que perdamos la cuenta porque nunca dejamos de elegirnos.</strong> Quiero seguir tomándote de la mano, seguir riéndome contigo, seguir viéndote cumplir tus sueños y que tú también veas los míos. Quiero que, pase lo que pase, siempre podamos decir: "Aquí seguimos, tú y yo."',
+            'Te elijo hoy, mañana y todos los días que vengan. En los días buenos, en los difíciles y en los normales. Porque, si algo tengo claro, es que <strong>de todos los futuros que podría imaginar, mi favorito siempre será cualquiera en el que estés tú.</strong>',
+            'Quiero seguir conquistándote, seguir aprendiendo a amarte mejor y seguir convirtiéndome en alguien de quien te sientas orgullosa.',
+            'Gracias por abrirme un espacio en tu vida. Gracias por dejarme ser tu novio. Y gracias por tu cariño, por tu forma de ser y por cada momento que compartimos.',
+            'Simplemente gracias',
+            'Te quiero muchísimo, preciosa. ❤️'
         ]
     },
     {
@@ -97,9 +100,8 @@ const monthlyLetters = [
     {
         month: 12,
         paragraphs: [
-            '<span class="first-letter">L</span>a carta del año es la más importante de todas…',
-            '…¿de verdad creías que la iba a dejar aquí para que la espiaras? 😌',
-            'Espérala. Va a ser inolvidable 🤍'
+            '<span class="first-letter">D</span>e todos los futuros que podría imaginar...',
+            '<strong>mi favorito siempre será cualquiera en el que estés tú. ❤️</strong>'
         ]
     }
 ];
