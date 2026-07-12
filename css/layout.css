@@ -1,0 +1,117 @@
+/* ═══ LAYOUT — Scenes, buttons & shared countdown ═══ */
+
+/* ─── Scene layout & transitions ─── */
+.scene {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 1.2s;
+    transform: translateY(30px);
+}
+
+.scene.active {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scene.exit-up {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-40px);
+}
+
+/* ─── Elegant button ─── */
+.elegant-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--tan);
+    background: transparent;
+    border: 1px solid rgba(201, 169, 110, 0.4);
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease 1.2s forwards;
+}
+
+.elegant-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.elegant-btn:hover {
+    border-color: var(--tan);
+    box-shadow: 0 0 30px rgba(201, 169, 110, 0.15);
+    transform: translateY(-2px);
+}
+
+.elegant-btn:hover::before {
+    left: 100%;
+}
+
+/* ─── Countdown (shared base, scene files override sizes) ─── */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+    opacity: 1;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 55px;
+}
+
+.countdown-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--brown);
+    line-height: 1;
+}
+
+.countdown-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.55rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--tan-dark);
+    margin-top: 4px;
+}
+
+.countdown-separator {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: rgba(201, 169, 110, 0.3);
+    margin-bottom: 12px;
+}
+

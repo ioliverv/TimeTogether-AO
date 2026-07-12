@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Mes Juntos — A & O ❤️</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="1 Mes Juntos — A & O ❤️">
+    <meta property="og:description"
+        content="Un mes de momentos bonitos juntos. Cada día contigo es un regalo que quiero seguir abriendo.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/meta_image.png">
+
+    <!-- Styles (order: base → layout → effects → scenes → responsive) -->
+    <!-- Bump ?v= whenever files change so browsers drop their cached copies -->
+    <link rel="stylesheet" href="css/base.css?v=4">
+    <link rel="stylesheet" href="css/layout.css?v=4">
+    <link rel="stylesheet" href="css/effects.css?v=4">
+    <link rel="stylesheet" href="css/entrance.css?v=4">
+    <link rel="stylesheet" href="css/months.css?v=4">
+    <link rel="stylesheet" href="css/letter.css?v=4">
+    <link rel="stylesheet" href="css/final.css?v=4">
+    <link rel="stylesheet" href="css/responsive.css?v=4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Ambient Background Layers -->
+    <div class="bg-gradient"></div>
+    <div class="grain-overlay"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles-container" id="particles-container"></div>
+
+    <!-- Floating Hearts -->
+    <div class="hearts-container" id="hearts-container"></div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--  SCENE 1 — ENTRANCE                     -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="scene scene-entrance active" id="scene-entrance">
+        <div class="watermark watermark-initials watermark-top-left">A & O</div>
+        <div class="entrance-content">
+            <div class="month-badge">
+                <span class="badge-number">1</span>
+                <span class="badge-label">MES</span>
+            </div>
+            <h1 class="entrance-title">Nuestro primer mes juntos</h1>
+            <p class="entrance-subtitle">el primero de muchos más</p>
+            <div class="entrance-divider">❦ ════ •⊰ 🤍 ⊱• ════ ❦</div>
+
+            <!-- Live Countdown -->
+            <div class="entrance-countdown" id="entrance-countdown">
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span class="countdown-value count-days">00</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-value count-hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-value count-minutes">00</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-value count-seconds">00</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Date Input to unlock -->
+            <div class="date-unlock">
+                <p class="date-unlock-label">¿Cuándo empezó nuestra historia?</p>
+                <input type="text" id="date-input" class="date-input" placeholder="DD/MM/AAAA" maxlength="10"
+                    autocomplete="off">
+                <p class="date-error" id="date-error">Esa no es la fecha... intenta de nuevo 💔</p>
+            </div>
+            
+            <div class="watermark watermark-full watermark-bottom">Anahí & Oliver</div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--  SCENE 2 — MONTHLY CARDS GALLERY         -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="scene scene-months" id="scene-months">
+        <div class="watermark watermark-initials">A & O</div>
+        <div class="months-content">
+            <h2 class="months-title">Nuestras cartas</h2>
+            <p class="months-subtitle">Cada mes juntos se abre una carta nueva 🤍</p>
+
+            <div class="countdown-container months-countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value count-days">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-value count-hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-value count-minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-value count-seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+
+            <div class="months-grid" id="months-grid">
+                <!-- Month cards populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--  SCENE 3 — THE LETTER                    -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="scene scene-letter" id="scene-letter">
+        <div class="mini-cards-container" id="mini-cards-container">
+            <!-- Mini cards populated by JS -->
+        </div>
+        <div class="tap-prompt" id="tap-prompt">toca para continuar</div>
+        <div class="watermark watermark-full watermark-top">Anahí & Oliver</div>
+
+        <div class="countdown-container letter-countdown">
+            <div class="countdown-item">
+                <span class="countdown-value count-days">00</span>
+                <span class="countdown-label">Días</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-value count-hours">00</span>
+                <span class="countdown-label">Horas</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-value count-minutes">00</span>
+                <span class="countdown-label">Minutos</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-value count-seconds">00</span>
+                <span class="countdown-label">Segundos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════ -->
+    <!--  SCENE 4 — COUNTDOWN / FINAL             -->
+    <!-- ════════════════════════════════════════ -->
+    <section class="scene scene-final" id="scene-final">
+        <div class="final-content">
+            <div class="watermark watermark-full watermark-top">Anahí & Oliver</div>
+            <h2 class="final-title">Nuestro primer mes juntos</h2>
+            <p class="final-subtitle">El primero de muchos… y que los meses se vuelvan años 🤍</p>
+
+            <div class="countdown-container final-countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value count-days">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-value count-hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-value count-minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-value count-seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+
+            <div class="final-buttons">
+                <button id="back-to-cards-btn" class="elegant-btn back-to-cards-btn">
+                    <span>Ver las cartas 💌</span>
+                </button>
+                <button id="restart-btn" class="elegant-btn restart-btn">
+                    <span>Volver a vivirlo ✨</span>
+                </button>
+            </div>
+            
+            <div class="watermark watermark-initials watermark-bottom">A & O</div>
+        </div>
+    </section>
+
+    <!-- Background Audio (optional) -->
+    <audio id="bg-music" src="song.mp3" preload="auto" loop></audio>
+
+    <!-- Scripts (load order matters: data → DOM → utils → features → init) -->
+    <!-- Bump ?v= whenever files change so browsers drop their cached copies -->
+    <script src="js/config.js?v=4"></script>
+    <script src="js/letters.js?v=4"></script>
+    <script src="js/dom.js?v=4"></script>
+    <script src="js/effects.js?v=4"></script>
+    <script src="js/scenes.js?v=4"></script>
+    <script src="js/countdown.js?v=4"></script>
+    <script src="js/letter.js?v=4"></script>
+    <script src="js/months.js?v=4"></script>
+    <script src="js/date-gate.js?v=4"></script>
+    <script src="js/main.js?v=4"></script>
+</body>
+
+</html>

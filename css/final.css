@@ -1,0 +1,109 @@
+/* ═══ SCENE 4 — FINAL (hero countdown & buttons) ═══ */
+
+.scene-final {
+    flex-direction: column;
+}
+
+.final-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.final-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--brown);
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease 0.3s forwards;
+}
+
+.final-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    color: var(--tan-dark);
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease 0.6s forwards;
+}
+
+/* ─── Hero countdown ─── */
+.final-countdown {
+    gap: 18px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease 0.9s forwards;
+}
+
+.final-countdown .countdown-item {
+    min-width: 80px;
+}
+
+.final-countdown .countdown-value {
+    font-size: 3.6rem;
+    background: linear-gradient(180deg, #6b4a2e 0%, #a67c4e 60%, #c9a96e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 6px 18px rgba(201, 169, 110, 0.45));
+}
+
+.final-countdown .countdown-label {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    margin-top: 8px;
+    color: var(--tan);
+}
+
+.final-countdown .countdown-separator {
+    font-size: 2.4rem;
+    margin-bottom: 22px;
+}
+
+/* ─── Final buttons ─── */
+.final-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 65px;
+}
+
+.back-to-cards-btn {
+    animation-delay: 1.3s !important;
+    border: 1px solid rgba(201, 169, 110, 0.4) !important;
+    border-radius: 50px;
+    padding: 16px 48px;
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    background: rgba(201, 169, 110, 0.05);
+}
+
+.back-to-cards-btn:hover {
+    background: rgba(201, 169, 110, 0.1);
+    box-shadow: 0 8px 30px rgba(201, 169, 110, 0.2);
+    transform: translateY(-3px);
+}
+
+.restart-btn {
+    animation-delay: 1.5s !important;
+    border: 1px solid rgba(166, 38, 38, 0.3) !important;
+    border-radius: 50px;
+    padding: 16px 48px;
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    color: var(--red-light) !important;
+    background: rgba(166, 38, 38, 0.04);
+}
+
+.restart-btn:hover {
+    border-color: var(--red-light) !important;
+    background: rgba(166, 38, 38, 0.08);
+    box-shadow: 0 8px 30px rgba(166, 38, 38, 0.18) !important;
+    transform: translateY(-3px);
+}
+

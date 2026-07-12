@@ -1,0 +1,399 @@
+/* ═══ RESPONSIVE — All breakpoints in one place ═══ */
+
+/* ─── Tablet (max 768px) ─── */
+@media (max-width: 768px) {
+    .entrance-title { font-size: 2.8rem; }
+    .entrance-subtitle { font-size: 1.1rem; }
+    .month-badge { width: 80px; height: 80px; margin-bottom: 15px; }
+    .badge-number { font-size: 2rem; }
+
+    .countdown-value { font-size: 1.8rem; }
+    .countdown-separator { font-size: 1.5rem; }
+    .countdown-item { min-width: 45px; }
+
+    .mini-card { max-width: 90%; padding: 35px 25px; }
+    .mini-card-text { font-size: 1.15rem; }
+    .mini-card-text .first-letter { font-size: 2.8rem; }
+
+    .final-title { font-size: 2.8rem; }
+    .final-subtitle { font-size: 1rem; }
+    .final-countdown { gap: 12px; }
+    .final-countdown .countdown-value { font-size: 2.6rem; }
+    .final-countdown .countdown-separator { font-size: 1.8rem; margin-bottom: 16px; }
+    .final-countdown .countdown-item { min-width: 60px; }
+    .final-buttons { margin-top: 50px; }
+
+    .months-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ─── Mobile (max 480px) ─── */
+@media (max-width: 480px) {
+    .entrance-content {
+        justify-content: center;
+        gap: 24px;
+        padding: 4vh 16px;
+    }
+    .entrance-title { font-size: clamp(2.4rem, 11vw, 2.9rem); margin-bottom: 0; }
+    .entrance-subtitle { font-size: 1.35rem; margin-bottom: 0; }
+    .month-badge { width: 106px; height: 106px; margin-bottom: 0; }
+    .badge-number { font-size: 2.8rem; }
+    .badge-label { font-size: 0.78rem; letter-spacing: 4px; }
+    .entrance-divider { margin-bottom: 0; font-size: 0.9rem; }
+    .entrance-countdown { margin-bottom: 0; }
+    .date-stamp { margin-bottom: 0; padding: 11px 24px; }
+    .date-stamp-date { font-size: 1.25rem; }
+    .date-stamp-caption { font-size: 0.85rem; }
+
+    .countdown-container { gap: 4px; flex-wrap: nowrap; }
+    .countdown-value { font-size: clamp(1.4rem, 6vw, 2rem); }
+    .countdown-separator { font-size: clamp(1.2rem, 5vw, 1.5rem); margin-bottom: 8px; }
+    .countdown-label { font-size: 0.55rem; letter-spacing: 1px; }
+    .countdown-item { min-width: 45px; }
+
+    .date-input-container { margin-bottom: 30px; }
+    .date-input { width: 230px; font-size: 1.05rem; padding: 13px 18px; }
+    .date-unlock-label { font-size: 1.35rem; margin-bottom: 12px; }
+    .date-error { font-size: 1rem; }
+
+    .mini-cards-container { min-height: 280px; }
+    .mini-card { max-width: 95%; padding: 35px 22px; }
+    .mini-card-text { font-size: 1.15rem; line-height: 1.7; }
+    .mini-card-text .first-letter { font-size: 2.8rem; }
+    .mini-card.card-closing .mini-card-text { font-size: 1.8rem; }
+    .mini-card.card-closing .letter-signature-name { font-size: 2.2rem; }
+    .mini-card.card-greeting .mini-card-text { font-size: 2.4rem; }
+
+    .final-title { font-size: clamp(2.2rem, 9vw, 2.9rem); }
+    .final-subtitle { font-size: 1rem; margin-bottom: 0; padding: 0 10px; }
+    .final-countdown { gap: 4px; flex-wrap: nowrap; }
+    .final-countdown .countdown-value { font-size: clamp(1.6rem, 7vw, 2.7rem); }
+    .final-countdown .countdown-separator { font-size: clamp(1.4rem, 6vw, 1.9rem); margin-bottom: 12px; }
+    .final-countdown .countdown-item { min-width: 50px; }
+    .final-countdown .countdown-label { font-size: 0.6rem; letter-spacing: 1px; }
+    .final-buttons { margin-top: 0; gap: 16px; flex-direction: column; width: 100%; align-items: center; }
+
+    .months-title { font-size: 2.6rem; }
+    .months-subtitle { font-size: 1.05rem; margin-bottom: 25px; }
+    .months-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .month-card { padding: 20px 10px 15px; }
+    .month-card-number { font-size: 1.9rem; }
+    .month-card-icon { font-size: 1.4rem; }
+    .month-card-hint { font-size: 0.8rem; }
+
+    .elegant-btn {
+        padding: 13px 30px;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+    }
+
+    /* Keep card, prompt and countdown together as one centered group */
+    .scene-letter { justify-content: center; gap: 20px; padding: 4vh 16px; }
+    .tap-prompt { margin-top: 0; }
+    .letter-countdown { margin-top: 0; }
+
+    .scene-final { overflow-y: auto; justify-content: flex-start; }
+    .final-content {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        padding: 4vh 16px;
+    }
+    .final-title { margin-bottom: 0; }
+
+    .scene-months { padding: 25px 14px; }
+}
+
+/* ─── Tablet portrait (iPad & similar): scale UP, screen is tall and roomy ─── */
+@media (min-width: 481px) and (max-width: 1100px) and (orientation: portrait) {
+    .entrance-content {
+        justify-content: space-evenly;
+        padding: 4vh 20px;
+    }
+    .entrance-title { font-size: clamp(3rem, 10.5vw, 5.5rem); margin-bottom: 0; }
+    .entrance-subtitle { font-size: 1.9rem; margin-bottom: 0; }
+    .month-badge { width: 165px; height: 165px; margin-bottom: 0; }
+    .badge-number { font-size: 4.2rem; }
+    .badge-label { font-size: 1.05rem; letter-spacing: 7px; }
+    .entrance-divider { font-size: 1.3rem; margin-bottom: 0; }
+    .entrance-countdown { margin-bottom: 0; }
+    .date-stamp { margin-bottom: 0; padding: 18px 40px; }
+    .date-stamp-date { font-size: 1.9rem; }
+    .date-stamp-caption { font-size: 1.25rem; }
+    .date-stamp i { font-size: 1.1rem; }
+
+    .countdown-container { gap: 20px; }
+    .countdown-value { font-size: 3.8rem; }
+    .countdown-separator { font-size: 2.8rem; margin-bottom: 24px; }
+    .countdown-label { font-size: 0.9rem; letter-spacing: 3px; margin-top: 10px; }
+    .countdown-item { min-width: 98px; }
+
+    .date-unlock-label { font-size: 2rem; margin-bottom: 18px; }
+    .date-input { width: 340px; font-size: 1.5rem; padding: 19px 26px; }
+    .date-error { font-size: 1.4rem; }
+
+    .months-content { max-width: 90%; }
+    .months-title { font-size: 4.5rem; }
+    .months-subtitle { font-size: 1.65rem; }
+    .months-countdown .countdown-value { font-size: 2.5rem; }
+    .months-countdown .countdown-item { min-width: 65px; }
+    .months-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .month-card { padding: 38px 16px 28px; border-radius: 18px; }
+    .month-card-icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .month-card-number { font-size: 3.2rem; }
+    .month-card-label { font-size: 0.85rem; }
+    .month-card-hint { font-size: 1.2rem; margin-top: 10px; }
+
+    .mini-card { max-width: 82vw; padding: 65px 55px; }
+    .mini-cards-container { max-width: 82vw; min-height: 450px; }
+    .mini-card-text { font-size: 1.8rem; line-height: 1.8; }
+    .mini-card-text .first-letter { font-size: 4.5rem; }
+    .mini-card.card-closing .mini-card-text { font-size: 2.8rem; }
+    .mini-card.card-closing .letter-signature-name { font-size: 3.2rem; }
+    .mini-card.card-closing .letter-signature-sub { font-size: 1.3rem; }
+    .mini-card.card-greeting .mini-card-text { font-size: 3.8rem; }
+    .mini-card-ornament { font-size: 1rem; }
+    .mini-card-counter { font-size: 0.8rem; }
+    .tap-prompt { font-size: 1.05rem; margin-top: 45px; padding: 15px 36px; }
+    .letter-countdown { gap: 14px; }
+    .letter-countdown .countdown-value { font-size: 2.5rem; }
+    .letter-countdown .countdown-separator { font-size: 1.9rem; margin-bottom: 16px; }
+    .letter-countdown .countdown-label { font-size: 0.7rem; letter-spacing: 2px; }
+    .letter-countdown .countdown-item { min-width: 68px; }
+
+    .final-title { font-size: clamp(3.2rem, 11vw, 5.6rem); }
+    .final-subtitle { font-size: 2rem; padding: 0 20px; }
+    .final-countdown { gap: 30px; }
+    .final-countdown .countdown-value { font-size: 5.6rem; }
+    .final-countdown .countdown-separator { font-size: 3.6rem; margin-bottom: 34px; }
+    .final-countdown .countdown-item { min-width: 125px; }
+    .final-countdown .countdown-label { font-size: 1rem; letter-spacing: 4px; }
+    .final-buttons { margin-top: 0; gap: 28px; }
+
+    .elegant-btn { padding: 21px 58px; font-size: 1rem; }
+
+    /* Keep card, prompt and countdown together as one centered group */
+    .scene-letter { justify-content: center; gap: 35px; padding: 5vh 24px; }
+    .tap-prompt { margin-top: 0 !important; }
+    .letter-countdown { margin-top: 0; }
+
+    .scene-final { overflow-y: auto; justify-content: flex-start; }
+    .final-content {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 55px;
+        padding: 5vh 24px;
+    }
+    .final-title { margin-bottom: 0; }
+    .final-subtitle { margin-bottom: 0; }
+    .final-countdown { margin-bottom: 0; }
+
+    .scene-months { padding: 4vh 24px; }
+    .months-content {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .months-title { margin-bottom: 0; }
+    .months-subtitle { margin-bottom: 0; }
+    .months-countdown { margin-bottom: 0; }
+}
+
+/* ─── Tablet landscape — touch devices only (pointer: coarse keeps desktops out) ─── */
+@media (orientation: landscape) and (pointer: coarse) and (min-width: 900px) and (max-width: 1450px) and (min-height: 500px) {
+    .entrance-content {
+        justify-content: space-evenly;
+        padding: 4vh 30px;
+    }
+    .entrance-title { font-size: clamp(3.5rem, 6vw, 5rem); margin-bottom: 0; }
+    .entrance-subtitle { font-size: 1.7rem; margin-bottom: 0; }
+    .month-badge { width: 140px; height: 140px; margin-bottom: 0; }
+    .badge-number { font-size: 3.6rem; }
+    .badge-label { font-size: 0.9rem; letter-spacing: 6px; }
+    .entrance-divider { font-size: 1.2rem; margin-bottom: 0; }
+    .entrance-countdown { margin-bottom: 0; }
+    .date-stamp { margin-bottom: 0; padding: 16px 36px; }
+    .date-stamp-date { font-size: 1.7rem; }
+    .date-stamp-caption { font-size: 1.15rem; }
+    .date-stamp i { font-size: 1rem; }
+
+    .countdown-container { gap: 18px; }
+    .countdown-value { font-size: 3.4rem; }
+    .countdown-separator { font-size: 2.6rem; margin-bottom: 22px; }
+    .countdown-label { font-size: 0.8rem; letter-spacing: 3px; margin-top: 10px; }
+    .countdown-item { min-width: 90px; }
+
+    .date-unlock-label { font-size: 1.7rem; margin-bottom: 16px; }
+    .date-input { width: 320px; font-size: 1.35rem; padding: 17px 24px; }
+    .date-error { font-size: 1.3rem; }
+
+    .months-content { max-width: 92%; }
+    .months-title { font-size: 4.2rem; }
+    .months-subtitle { font-size: 1.55rem; }
+    .months-countdown .countdown-value { font-size: 2.4rem; }
+    .months-countdown .countdown-item { min-width: 62px; }
+    .months-grid { gap: 24px; }
+    .month-card { padding: 34px 16px 26px; border-radius: 18px; }
+    .month-card-icon { font-size: 2.1rem; margin-bottom: 10px; }
+    .month-card-number { font-size: 3rem; }
+    .month-card-label { font-size: 0.8rem; }
+    .month-card-hint { font-size: 1.15rem; margin-top: 10px; }
+
+    .mini-card { max-width: 760px; padding: 55px 60px; }
+    .mini-cards-container { max-width: 760px; min-height: 400px; }
+    .mini-card-text { font-size: 1.7rem; line-height: 1.75; }
+    .mini-card-text .first-letter { font-size: 4.2rem; }
+    .mini-card.card-closing .mini-card-text { font-size: 2.6rem; }
+    .mini-card.card-closing .letter-signature-name { font-size: 3rem; }
+    .mini-card.card-closing .letter-signature-sub { font-size: 1.25rem; }
+    .mini-card.card-greeting .mini-card-text { font-size: 3.5rem; }
+    .mini-card-ornament { font-size: 1rem; }
+    .tap-prompt { font-size: 1rem; margin-top: 38px; padding: 14px 34px; }
+    .letter-countdown { gap: 12px; }
+    .letter-countdown .countdown-value { font-size: 2.3rem; }
+    .letter-countdown .countdown-separator { font-size: 1.7rem; margin-bottom: 14px; }
+    .letter-countdown .countdown-label { font-size: 0.65rem; letter-spacing: 2px; }
+    .letter-countdown .countdown-item { min-width: 62px; }
+
+    .final-title { font-size: clamp(3.8rem, 6.5vw, 5.4rem); }
+    .final-subtitle { font-size: 1.9rem; }
+    .final-countdown { gap: 28px; }
+    .final-countdown .countdown-value { font-size: 5.4rem; }
+    .final-countdown .countdown-separator { font-size: 3.4rem; margin-bottom: 32px; }
+    .final-countdown .countdown-item { min-width: 120px; }
+    .final-countdown .countdown-label { font-size: 0.95rem; letter-spacing: 4px; }
+    .final-buttons { margin-top: 0; gap: 28px; }
+
+    .elegant-btn { padding: 19px 54px; font-size: 0.95rem; }
+
+    /* Keep card, prompt and countdown together as one centered group */
+    .scene-letter { justify-content: center; gap: 28px; padding: 4vh 30px; }
+    .tap-prompt { margin-top: 0 !important; }
+    .letter-countdown { margin-top: 0; }
+
+    .scene-final { overflow-y: auto; justify-content: flex-start; }
+    .final-content {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        padding: 4vh 30px;
+    }
+    .final-title { margin-bottom: 0; }
+    .final-subtitle { margin-bottom: 0; }
+    .final-countdown { margin-bottom: 0; }
+
+    .scene-months { padding: 3vh 24px; }
+    .months-content {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .months-title { margin-bottom: 0; }
+    .months-subtitle { margin-bottom: 0; }
+    .months-countdown { margin-bottom: 0; }
+}
+
+/* ─── Phone landscape (short height): compact sizes, every scene scrolls ─── */
+@media (orientation: landscape) and (max-height: 500px) {
+    .scene { overflow-y: auto; }
+    /* Column scenes anchor to the top so they scroll without clipping.
+       .scene-entrance is a row flexbox — flex-start there would push content left. */
+    .scene-months, .scene-letter, .scene-final { justify-content: flex-start; }
+    .scene-entrance { align-items: flex-start; }
+
+    .entrance-content {
+        height: auto;
+        min-height: 100%;
+        justify-content: flex-start;
+        gap: 14px;
+        padding: 25px 20px;
+    }
+    .entrance-title { font-size: 2.4rem; margin-bottom: 0; }
+    .entrance-subtitle { font-size: 1.05rem; margin-bottom: 0; }
+    .month-badge { width: 80px; height: 80px; margin-bottom: 0; }
+    .badge-number { font-size: 2rem; }
+    .badge-label { font-size: 0.6rem; letter-spacing: 4px; }
+    .entrance-divider { margin-bottom: 0; font-size: 0.8rem; }
+    .entrance-countdown { margin-bottom: 0; }
+    .date-stamp { margin-bottom: 0; padding: 9px 20px; }
+    .date-stamp-date { font-size: 1.1rem; }
+    .date-stamp-caption { font-size: 0.8rem; }
+
+    .countdown-container { gap: 8px; }
+    .countdown-value { font-size: 1.7rem; }
+    .countdown-separator { font-size: 1.3rem; margin-bottom: 10px; }
+    .countdown-label { font-size: 0.5rem; }
+    .countdown-item { min-width: 48px; }
+
+    .date-unlock-label { font-size: 1.1rem; margin-bottom: 8px; }
+    .date-input { width: 200px; font-size: 1rem; padding: 10px 16px; }
+
+    .scene-months { padding: 20px; }
+    .months-content { min-height: 0; display: block; max-width: 640px; }
+    .months-title { font-size: 2.2rem; margin-bottom: 6px; }
+    .months-subtitle { font-size: 1rem; margin-bottom: 15px; }
+    .months-countdown { margin-bottom: 18px; }
+    .months-countdown .countdown-value { font-size: 1.5rem; }
+    .months-countdown .countdown-item { min-width: 44px; }
+    .months-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .month-card { padding: 14px 8px 12px; }
+    .month-card-icon { font-size: 1.2rem; margin-bottom: 4px; }
+    .month-card-number { font-size: 1.6rem; }
+    .month-card-label { font-size: 0.55rem; }
+    .month-card-hint { font-size: 0.75rem; margin-top: 4px; }
+
+    .scene-letter { padding: 15px 20px; }
+    .mini-cards-container { min-height: 65vh; margin: auto; }
+    .mini-card { max-width: 560px; padding: 28px 26px; max-height: 85vh; overflow-y: auto; }
+    .mini-card-text { font-size: 1.05rem; line-height: 1.55; }
+    .mini-card-text .first-letter { font-size: 2.3rem; }
+    .mini-card.card-closing .mini-card-text { font-size: 1.5rem; }
+    .mini-card.card-closing .letter-signature-name { font-size: 1.8rem; }
+    .mini-card.card-greeting .mini-card-text { font-size: 2.1rem; }
+    .mini-card-ornament { margin-bottom: 10px; }
+    .mini-card-counter { margin-top: 12px; }
+    .tap-prompt { margin-top: 12px; font-size: 0.7rem; padding: 9px 20px; }
+    .letter-countdown { margin-top: 10px; }
+    .letter-countdown .countdown-value { font-size: 1.35rem; }
+    .letter-countdown .countdown-label { font-size: 0.5rem; }
+    .letter-countdown .countdown-item { min-width: 42px; }
+
+    .final-content {
+        min-height: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .final-title { font-size: 2.2rem; margin-bottom: 6px; }
+    .final-subtitle { font-size: 1rem; margin-bottom: 20px; }
+    .final-countdown { gap: 10px; }
+    .final-countdown .countdown-value { font-size: 2.2rem; }
+    .final-countdown .countdown-separator { font-size: 1.6rem; margin-bottom: 14px; }
+    .final-countdown .countdown-item { min-width: 60px; }
+    .final-countdown .countdown-label { font-size: 0.55rem; }
+    .final-buttons { margin-top: 25px; gap: 14px; }
+    .elegant-btn { padding: 10px 26px; font-size: 0.65rem; }
+}
+
+/* ─── Very small screens (max 360px) ─── */
+@media (max-width: 360px) {
+    .countdown-value { font-size: 1.7rem; }
+    .countdown-item { min-width: 46px; }
+    .date-input { width: 195px; }
+    .mini-card-text { font-size: 1.05rem; }
+    .final-title { font-size: 2.1rem; }
+    .final-countdown .countdown-value { font-size: 2rem; }
+}
+
