@@ -4,29 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Mes Juntos ❤️ A & O ❤️</title>
+    <title>Nuestro tiempo juntos ❤️ A & O ❤️</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph — link preview -->
     <meta name="description"
-        content="Nuestro primer mes juntos pasó muy rápido, pero también es solo el inicio de todo lo bonito que nos falta por vivir. ❤️">
-    <meta property="og:title" content="1 Mes Juntos — A & O ❤️">
+        content="Aquí vive todo nuestro tiempo juntos. Cada mes que pasa abre una carta nueva, y siempre va a estar aquí esperándote. 🤍">
+    <meta property="og:title" content="Nuestro tiempo juntos — A & O ❤️">
     <meta property="og:description"
-        content="Nuestro primer mes juntos pasó muy rápido, pero también es solo el inicio de todo lo bonito que nos falta por vivir. ❤️">
+        content="Aquí vive todo nuestro tiempo juntos. Cada mes que pasa abre una carta nueva, y siempre va a estar aquí esperándote. 🤍">
     <meta property="og:type" content="website">
     <meta property="og:url" content=" https://ioliverv.github.io/TimeTogether-AO/">
     <meta property="og:image" content=" https://ioliverv.github.io/TimeTogether-AO/assets/meta_image.png">
 
     <!-- Styles (order: base → layout → effects → scenes → responsive) -->
     <!-- Bump ?v= whenever files change so browsers drop their cached copies -->
-    <link rel="stylesheet" href="css/base.css?v=4">
+    <link rel="stylesheet" href="css/base.css?v=5">
     <link rel="stylesheet" href="css/layout.css?v=4">
     <link rel="stylesheet" href="css/effects.css?v=4">
-    <link rel="stylesheet" href="css/entrance.css?v=4">
-    <link rel="stylesheet" href="css/months.css?v=4">
+    <link rel="stylesheet" href="css/entrance.css?v=6">
+    <link rel="stylesheet" href="css/months.css?v=5">
+    <link rel="stylesheet" href="css/monthly-decorations.css?v=5">
     <link rel="stylesheet" href="css/letter.css?v=8">
     <link rel="stylesheet" href="css/final.css?v=4">
-    <link rel="stylesheet" href="css/responsive.css?v=6">
+    <link rel="stylesheet" href="css/responsive.css?v=14">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
@@ -48,12 +49,21 @@
     <!--  SCENE 1 — ENTRANCE                     -->
     <!-- ════════════════════════════════════════ -->
     <section class="scene scene-entrance active" id="scene-entrance">
+        <!-- Decorations sit behind the content -->
+        <div class="constellation-container" id="constellation-container"></div>
+        <div class="garden-container" id="garden-container"></div>
+
         <div class="watermark watermark-initials watermark-top-left">A & O</div>
         <div class="entrance-content">
             <div class="month-badge">
+                <div class="watermark watermark-full watermark-top-behind-badge">Anahí & Oliver</div>
                 <span class="badge-number">1</span>
                 <span class="badge-label">MES</span>
             </div>
+
+            <!-- Necklace charms (populated by JS) -->
+            <div id="necklace-container-entrance" class="necklace-container necklace-container--entrance"></div>
+
             <h1 class="entrance-title">Nuestro primer mes juntos</h1>
             <p class="entrance-subtitle">el primero de muchos más</p>
             <div class="entrance-divider">❦ ════ •⊰ 🤍 ⊱• ════ ❦</div>
@@ -90,8 +100,6 @@
                     autocomplete="off">
                 <p class="date-error" id="date-error">Esa no es la fecha... intenta de nuevo 💔</p>
             </div>
-
-            <div class="watermark watermark-full watermark-bottom">Anahí & Oliver</div>
         </div>
     </section>
 
@@ -99,10 +107,15 @@
     <!--  SCENE 2 — MONTHLY CARDS GALLERY         -->
     <!-- ════════════════════════════════════════ -->
     <section class="scene scene-months" id="scene-months">
+        <div class="constellation-container" id="constellation-container-months"></div>
+
         <div class="watermark watermark-initials">A & O</div>
         <div class="months-content">
             <h2 class="months-title">Nuestras cartas</h2>
             <p class="months-subtitle">Cada mes juntos se abre una carta nueva 🤍</p>
+
+            <!-- Necklace charms (populated by JS) -->
+            <div id="necklace-container" class="necklace-container"></div>
 
             <div class="countdown-container months-countdown">
                 <div class="countdown-item">
@@ -216,15 +229,16 @@
     <!-- Scripts (load order matters: data → DOM → utils → features → init) -->
     <!-- Bump ?v= whenever files change so browsers drop their cached copies -->
     <script src="js/config.js?v=4"></script>
-    <script src="js/letters.js?v=4"></script>
+    <script src="js/letters.js?v=5"></script>
     <script src="js/dom.js?v=4"></script>
     <script src="js/effects.js?v=4"></script>
     <script src="js/scenes.js?v=4"></script>
-    <script src="js/countdown.js?v=4"></script>
+    <script src="js/countdown.js?v=5"></script>
     <script src="js/letter.js?v=7"></script>
-    <script src="js/months.js?v=4"></script>
+    <script src="js/months.js?v=7"></script>
+    <script src="js/monthly-decorations.js?v=5"></script>
     <script src="js/date-gate.js?v=4"></script>
-    <script src="js/main.js?v=4"></script>
+    <script src="js/main.js?v=5"></script>
 </body>
 
 </html>

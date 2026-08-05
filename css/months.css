@@ -52,13 +52,40 @@
 
 /* ─── Cards grid ─── */
 .months-grid {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
 
+/* Thread linking unlocked cards, behind the grid */
+.card-thread-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.card-thread-path {
+    stroke-width: 4px;
+    stroke-linecap: round;
+    filter: drop-shadow(0 1px 2px rgba(139, 115, 85, 0.28));
+}
+
+/* Highlight down the middle of the thread */
+.card-thread-sheen {
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 1px;
+    stroke-linecap: round;
+    fill: none;
+    pointer-events: none;
+}
+
 .month-card {
     position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,7 +98,51 @@
     opacity: 0;
     animation: fadeInUp 0.9s ease forwards;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.4s ease, border-color 0.4s ease;
+                box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+/* ─── Month 2: Spiderman theme ─── */
+.month-card.month-card--spiderman {
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg stroke='white' stroke-width='0.6' fill='none' opacity='0.16'%3E%3Cline x1='50' y1='0' x2='50' y2='100'/%3E%3Cline x1='0' y1='50' x2='100' y2='50'/%3E%3Cline x1='6' y1='6' x2='94' y2='94'/%3E%3Cline x1='94' y1='6' x2='6' y2='94'/%3E%3Ccircle cx='50' cy='50' r='16'/%3E%3Ccircle cx='50' cy='50' r='32'/%3E%3Ccircle cx='50' cy='50' r='48'/%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(150deg, #200f38 0%, #2a1440 45%, #14173a 100%);
+    background-size: cover, cover;
+    border: 1.5px solid #e6362f;
+    box-shadow: 0 0 14px rgba(230, 54, 47, 0.35), inset 0 0 0 1.5px rgba(58, 92, 230, 0.5);
+    overflow: hidden;
+}
+
+.month-card.month-card--spiderman::after {
+    content: '🕷️';
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 0.8rem;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 3px rgba(230, 54, 47, 0.7));
+}
+
+.month-card.month-card--spiderman.unlocked:hover {
+    border-color: #ff4444;
+    box-shadow: 0 0 22px rgba(230, 54, 47, 0.55), inset 0 0 0 1.5px rgba(58, 92, 230, 0.65);
+}
+
+.month-card.month-card--spiderman .month-card-number {
+    color: #ff5c5c;
+    text-shadow: 0 0 10px rgba(230, 54, 47, 0.55);
+}
+
+.month-card.month-card--spiderman .month-card-label,
+.month-card.month-card--spiderman .month-card-hint {
+    color: #cdd6ff;
+}
+
+.month-card.month-card--spiderman .icon-envelope {
+    color: #ff6a6a;
+}
+
+.month-card.month-card--spiderman .icon-envelope .icon-heart {
+    color: #6a8fff;
 }
 
 .month-card.unlocked {

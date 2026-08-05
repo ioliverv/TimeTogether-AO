@@ -32,6 +32,7 @@ function buildMonthsGrid() {
 
         if (isUnlocked) {
             card.classList.add('unlocked');
+            if (letter.month === 2) card.classList.add('month-card--spiderman');
             card.innerHTML = `
                 <span class="month-card-icon icon-envelope">
                     <i class="fa-regular fa-envelope-open"></i>
@@ -64,11 +65,28 @@ function buildMonthsGrid() {
 
         monthsGrid.appendChild(card);
     });
+
+    // Scene-months decorations
+    buildNecklace(unlocked);
+    buildConstellation(unlocked, 'constellation-container-months');
+
+    // Deferred: fadeInUp is still animating the cards it measures.
+    setTimeout(buildCardThread, 1000);
 }
 
 // Open an unlocked month's letter
 function openMonthLetter(index) {
-    // Build the cards right away (resets index/state) so no stale-state tap can skip ahead
+    const letter = monthlyLetters[index];
+
+    // Dedicated page: navigate away; delay lets the heart burst play.
+    if (letter.standaloneUrl) {
+        setTimeout(() => {
+            window.location.href = letter.standaloneUrl;
+        }, 300);
+        return;
+    }
+
+    // Build up front so a stale tap can't skip ahead
     buildMiniCards(index);
     tapPrompt.style.display = '';
     setTimeout(() => {

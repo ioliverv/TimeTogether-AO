@@ -1,0 +1,466 @@
+/* ═══ MONTHLY DECORATIONS — Garden, constellation & necklace ═══ */
+
+/* ══════════════════════════════════════════════════════════════
+   GARDEN
+══════════════════════════════════════════════════════════════ */
+/* overflow:hidden required — sway overflows ~1px, causing a scrollbar */
+.garden-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    pointer-events: none;
+    z-index: 3;
+    overflow: hidden;
+    /* Spacing between flowers; tightened on narrow screens */
+    --gf-pitch: 52px;
+}
+
+/* Symmetric around centre: --gf-side (-1/1), --gf-rank (distance out) */
+.garden-flower {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% + var(--gf-side, -1) * var(--gf-pitch) * (var(--gf-rank, 0) + 0.52) - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: bottom center;
+    animation:
+        flower-grow 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) var(--gf-grow-delay, 0s) both,
+        flower-sway var(--gf-sway-dur, 3.2s) ease-in-out var(--gf-sway-delay, 0s) infinite;
+}
+
+@keyframes flower-grow {
+    from { transform: scaleY(0); opacity: 0; }
+    to   { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes flower-sway {
+    0%, 100% { transform: rotate(0deg); }
+    25%       { transform: rotate(var(--gf-sway-angle, 4deg)); }
+    75%       { transform: rotate(calc(var(--gf-sway-angle, 4deg) * -1)); }
+}
+
+/* ── Bloom ── */
+.flower-bloom {
+    position: relative;
+    width: var(--gf-bloom-size, 36px);
+    height: var(--gf-bloom-size, 36px);
+    filter:
+        drop-shadow(0 4px 8px rgba(0, 0, 0, 0.18))
+        drop-shadow(0 0 10px rgba(240, 120, 165, 0.2));
+}
+
+/* Base petal — teardrop */
+.flower-petal {
+    position: absolute;
+    width: 32%;
+    height: 55%;
+    top: -5%;
+    left: 34%;
+    transform-origin: 50% 100%;  /* pivot at bloom centre */
+    transform: rotate(var(--petal-rot, 0deg));
+    border-radius: 50% 50% 40% 40% / 75% 75% 25% 25%;
+    background: radial-gradient(
+        ellipse at 50% 20%,         /* highlight near the tip */
+        var(--gf-petal-light, #ffd0e4),
+        var(--gf-petal-dark,  #f07aad)
+    );
+    opacity: 0.92;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.06);
+}
+
+/* Daisy variant — narrow petals */
+.flower-petal--daisy {
+    width: 18%;
+    height: 52%;
+    top: -2%;
+    left: 41%;
+    border-radius: 50% 50% 35% 35% / 70% 70% 20% 20%;
+    background: radial-gradient(
+        ellipse at 50% 15%,
+        var(--gf-petal-light, #ffffff),
+        var(--gf-petal-dark,  #e0dcd8)
+    );
+    box-shadow: inset 0 -1px 3px rgba(0,0,0,0.08);
+}
+
+/* Spiderman variant — petal colours set inline by JS */
+.flower-petal--spider {
+    width: 32%;
+    height: 55%;
+    top: -5%;
+    left: 34%;
+    border-radius: 50% 50% 40% 40% / 75% 75% 25% 25%;
+    opacity: 0.93;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+.flower-center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 34%;
+    height: 34%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 38%, #fffbd0, #e8b800);
+    box-shadow:
+        0 0 6px rgba(230, 180, 0, 0.7),
+        0 0 12px rgba(230, 180, 0, 0.3);
+    z-index: 3;
+}
+
+/* ── Cat face (month 1) ── */
+.cat-ear {
+    position: absolute;
+    top: -8%;
+    width: 24%;
+    height: 28%;
+    background: var(--gf-petal-light, #ffffff);
+    clip-path: polygon(50% 0%, 4% 100%, 96% 100%);
+    z-index: 2;
+    transform-origin: bottom center;
+}
+
+.cat-ear-l { left: 21%; transform: rotate(-14deg); }
+.cat-ear-r { right: 21%; transform: rotate(14deg); }
+
+.cat-ear::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 16%;
+    width: 52%;
+    height: 52%;
+    transform: translateX(-50%);
+    background: #f5bfd2;
+    clip-path: polygon(50% 0%, 10% 100%, 90% 100%);
+}
+
+.cat-eye {
+    position: absolute;
+    top: 40%;
+    width: 9%;
+    height: 11%;
+    background: #2a2320;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.cat-eye-l { left: 30%; }
+.cat-eye-r { right: 30%; }
+
+.cat-blush {
+    position: absolute;
+    top: 52%;
+    width: 11%;
+    height: 8%;
+    background: #f6a8bf;
+    border-radius: 50%;
+    opacity: 0.55;
+    z-index: 3;
+}
+
+.cat-blush-l { left: 18%; }
+.cat-blush-r { right: 18%; }
+
+.cat-nose {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    width: 8%;
+    height: 6%;
+    transform: translate(-50%, 0);
+    background: #f0829e;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: 4;
+}
+
+.cat-whisker {
+    position: absolute;
+    width: 26%;
+    height: 1px;
+    background: rgba(150, 140, 130, 0.55);
+    z-index: 4;
+    transform-origin: center;
+}
+
+.cat-whisker-l { left: -12%; transform: rotate(var(--wk-angle, 0deg)); }
+.cat-whisker-r { right: -12%; transform: rotate(var(--wk-angle, 0deg)); }
+
+/* ── Spiderman face (month 2) ── */
+.spider-web {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 56%;
+    height: 56%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.spider-web-strand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 50%;
+    background: rgba(15, 15, 20, 0.35);
+    transform-origin: top center;
+    transform: translate(-50%, 0) rotate(var(--sw-rot, 0deg));
+}
+
+.spider-mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 52%;
+    height: 32%;
+    transform: translate(-50%, -50%);
+    background: #16161f;
+    border-radius: 50%;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 6%;
+    box-shadow:
+        0 0 0 1.5px rgba(200, 30, 30, 0.55),
+        0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.spider-eye {
+    width: 32%;
+    height: 58%;
+    background: #f4f0e8;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+.spider-eye-l { transform: rotate(-10deg); }
+.spider-eye-r { transform: rotate(10deg); }
+
+/* ── Stem ── */
+.flower-stem {
+    position: relative;
+    width: 3px;
+    height: var(--gf-stem-h, 28px);
+    background: linear-gradient(to bottom, #6aaa44, #3a7820);
+    border-radius: 2px;
+    margin-top: 1px;
+}
+
+/* ── Leaves ── */
+.flower-leaf-l,
+.flower-leaf-r {
+    position: absolute;
+    width: 12px;
+    height: 6px;
+    background: linear-gradient(135deg, #7dc050, #4a8828);
+    border-radius: 50%;
+    opacity: 0.88;
+}
+
+.flower-leaf-l {
+    top: 30%;
+    left: -10px;
+    transform: rotate(-34deg);
+    transform-origin: right center;
+}
+
+.flower-leaf-r {
+    top: 60%;
+    right: -10px;
+    transform: rotate(30deg);
+    transform-origin: left center;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HEART CONSTELLATION
+══════════════════════════════════════════════════════════════ */
+.constellation-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.constellation-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+.constellation-line {
+    stroke: rgba(201, 169, 110, 0.22);
+    stroke-width: 0.8;
+    stroke-dasharray: 3 4;
+    animation: line-fade-in 1.2s ease forwards;
+}
+
+@keyframes line-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.star-point {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: var(--sp-size, 1rem);
+    color: var(--tan);
+    line-height: 1;
+    user-select: none;
+    animation:
+        star-appear 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) var(--sp-appear-delay, 0s) both,
+        star-twinkle var(--sp-twinkle-dur, 2.8s) ease-in-out var(--sp-twinkle-delay, 0s) infinite;
+    filter:
+        drop-shadow(0 0 4px rgba(201, 169, 110, 0.7))
+        drop-shadow(0 0 10px rgba(201, 169, 110, 0.3));
+    text-shadow: 0 0 12px rgba(201, 169, 110, 0.9);
+}
+
+@keyframes star-appear {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0) rotate(-30deg); }
+    to   { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+}
+
+@keyframes star-twinkle {
+    0%, 100% { opacity: 0.65; transform: translate(-50%, -50%) scale(1); }
+    50%       { opacity: 1;    transform: translate(-50%, -50%) scale(1.25); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MEMORY NECKLACE
+══════════════════════════════════════════════════════════════ */
+.necklace-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.necklace-cord-svg {
+    width: 88%;
+    height: 24px;
+    overflow: visible;
+    display: block;
+}
+
+.necklace-cord-path {
+    stroke: rgba(201, 169, 110, 0.55);
+    stroke-width: 1.2;
+    fill: none;
+    filter: drop-shadow(0 1px 3px rgba(201, 169, 110, 0.25));
+}
+
+.necklace-charms {
+    width: 88%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    min-height: 65px;
+    margin-top: -4px;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.necklace-charm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: top center;
+    animation:
+        charm-appear 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) var(--ch-appear-delay, 0s) both,
+        charm-swing var(--ch-swing-dur, 3.2s) ease-in-out var(--ch-swing-delay, 0s) infinite;
+}
+
+@keyframes charm-appear {
+    from { opacity: 0; transform: translateY(-8px) scale(0.5); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes charm-swing {
+    0%, 100% { transform: rotate(0deg); }
+    25%       { transform: rotate(var(--ch-swing-angle, 4deg)); }
+    75%       { transform: rotate(calc(var(--ch-swing-angle, 4deg) * -1)); }
+}
+
+.charm-thread {
+    width: 1px;
+    height: var(--ch-thread-h, 18px);
+    background: linear-gradient(to bottom, rgba(201, 169, 110, 0.65), rgba(201, 169, 110, 0.25));
+}
+
+.charm-icon {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1.5px solid rgba(201, 169, 110, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    line-height: 1;
+    box-shadow:
+        0 3px 10px rgba(201, 169, 110, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.charm-icon:hover {
+    transform: scale(1.15);
+    box-shadow:
+        0 6px 18px rgba(201, 169, 110, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* SVG charms inside the bezel */
+.charm-svg {
+    display: block;
+    overflow: visible;
+}
+
+.charm-svg--cat  { width: 25px; height: 25px; }
+.charm-svg--ring { width: 22px; height: 22px; }
+.charm-svg--spidey { width: 26px; height: 26px; }
+
+.charm-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.42rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    color: var(--tan-dark);
+    margin-top: 3px;
+    opacity: 0.65;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+    /* Tighter bouquet so 12 months fit */
+    .garden-container { height: 90px; --gf-pitch: 30px; }
+    .flower-bloom {
+        width: calc(var(--gf-bloom-size, 36px) * 0.72) !important;
+        height: calc(var(--gf-bloom-size, 36px) * 0.72) !important;
+    }
+    .star-point { font-size: calc(var(--sp-size, 1rem) * 0.78); }
+    .charm-icon { width: 24px; height: 24px; font-size: 0.8rem; }
+    .charm-svg--cat  { width: 20px; height: 20px; }
+    .charm-svg--ring { width: 18px; height: 18px; }
+    .charm-svg--spidey { width: 21px; height: 21px; }
+    .charm-label { display: none; }
+    .necklace-container { margin-bottom: 10px; }
+    .necklace-charms { min-height: 50px; gap: 2px; }
+}

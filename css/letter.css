@@ -112,10 +112,7 @@
     flex-direction: column;
 }
 
-/* Auto margins center the text block when it's short; when it's too tall
-   to fit, they collapse to 0 so the text sits flush at the top and stays
-   fully reachable by scrolling (unlike justify-content: center, which can
-   clip the top of overflowing content with no way to scroll back to it). */
+/* Auto margins, not justify-content — no clipping when tall */
 .mini-card-text-inner {
     width: 100%;
     margin: auto 0;

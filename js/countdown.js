@@ -46,9 +46,17 @@ function updateMilestoneText() {
 // Live timer — updates every countdown on the page at once
 function startCountdown() {
     updateMilestoneText();
+    let renderedDay = new Date().getDate();
 
     function update() {
         const now = new Date();
+
+        // Roll the milestone over at midnight without needing a reload
+        if (now.getDate() !== renderedDay) {
+            renderedDay = now.getDate();
+            updateMilestoneText();
+        }
+
         const diff = now - ANNIVERSARY_DATE;
 
         if (diff < 0) {

@@ -1,5 +1,5 @@
 // ═══ LETTERS — One letter per month, unlocks on its date ═══
-// ✏️ Months 2–12 hold teaser texts; replace each with the real letter before its date.
+// Months 2-12 hold teaser text; replace each with the real letter before its date.
 
 const monthlyLetters = [
     {
@@ -19,6 +19,7 @@ const monthlyLetters = [
     },
     {
         month: 2,
+        standaloneUrl: 'https://ioliverv.github.io/2Month-A-O/',
         paragraphs: [
             '<span class="first-letter">E</span>y… ¿qué haces aquí? 😏',
             'No seas tramposa, Preciosa. Esta carta todavía no te toca.',

@@ -13,8 +13,14 @@ backToCardsBtn.addEventListener('click', (e) => {
     }, 500);
 });
 
-// Init
+// ─── Init ───
 generateParticles();
 generateHearts();
 startFireworks();
 startCountdown();
+
+// Entrance decorations
+const _unlockedNow = getUnlockedMonths();
+buildGarden(_unlockedNow);
+buildConstellation(_unlockedNow);
+buildNecklace(_unlockedNow, 'necklace-container-entrance');

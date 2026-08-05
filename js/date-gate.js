@@ -32,6 +32,7 @@ function validateDate(value) {
 
         if (bgMusic) {
             bgMusic.volume = 0.4;
+            bgMusic.currentTime = 0;
             bgMusic.play().catch(() => { });
         }
 
