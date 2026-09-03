@@ -145,6 +145,59 @@
     color: #6a8fff;
 }
 
+/* ─── Month 3: moonlit flower and a special VIP date ─── */
+.month-card.month-card--vip {
+    background:
+        radial-gradient(circle at 18% 20%, rgba(230, 248, 255, 0.4) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 26%, rgba(113, 190, 236, 0.3) 0 1px, transparent 2px),
+        linear-gradient(145deg, #05101c 0%, #123853 52%, #07111b 100%);
+    border: 1.5px solid #b9e8ff;
+    box-shadow: 0 0 16px rgba(117, 205, 255, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+    overflow: hidden;
+}
+
+.month-card.month-card--vip::before {
+    position: absolute;
+    top: -19px;
+    right: -17px;
+    width: 63px;
+    height: 63px;
+    border: 1px solid rgba(222, 246, 255, 0.38);
+    border-radius: 50%;
+    box-shadow: 0 0 0 13px rgba(116, 193, 238, 0.09), 0 0 0 26px rgba(8, 21, 34, 0.26);
+    content: '';
+}
+
+.month-card.month-card--vip::after {
+    position: absolute;
+    top: 7px;
+    right: 9px;
+    color: #f5fbff;
+    content: '✦';
+    filter: drop-shadow(0 0 4px #76cef9);
+    font-size: 0.85rem;
+}
+
+.month-card.month-card--vip.unlocked:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 24px rgba(136, 216, 255, 0.52), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.month-card.month-card--vip .month-card-number,
+.month-card.month-card--vip .icon-envelope {
+    color: #f4fbff;
+    text-shadow: 0 0 10px rgba(151, 218, 255, 0.75);
+}
+
+.month-card.month-card--vip .month-card-label,
+.month-card.month-card--vip .month-card-hint {
+    color: #c7eaff;
+}
+
+.month-card.month-card--vip .icon-envelope .icon-heart {
+    color: #8ed8ff;
+}
+
 .month-card.unlocked {
     cursor: pointer;
     border-color: rgba(201, 169, 110, 0.6);

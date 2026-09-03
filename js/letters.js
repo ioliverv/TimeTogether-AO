@@ -28,6 +28,7 @@ const monthlyLetters = [
     },
     {
         month: 3,
+        standaloneUrl: 'https://ioliverv.github.io/3Month-A-O/',
         paragraphs: [
             '<span class="first-letter">T</span>ramposa detectada 🚨',
             'Aquí no hay nada que leer todavía… la carta llegará justo a tiempo.',

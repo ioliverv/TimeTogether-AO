@@ -17,6 +17,7 @@ function updateMilestoneText() {
 
     let totalMonths = years * 12 + months;
     if (totalMonths <= 0) totalMonths = 1;
+    totalMonths = Math.max(totalMonths, UNLOCKED_MONTHS);
 
     let badgeNum = 1;
     let badgeText = 'MES';

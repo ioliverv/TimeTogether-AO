@@ -9,9 +9,9 @@ const FLOWER_TYPES = [
     // 1 — Spiderman: red/blue petals, colours applied per-petal in JS (month 2)
     { bloomSize: '40px', petalLight: null, petalDark: null, petalCount: 6, style: 'spiderman',
       centerLight: '#fff099', centerDark: '#ccbb00' },
-    // 2 — ivory
-    { bloomSize: '30px', petalLight: '#fffaee', petalDark: '#e8d090', petalCount: 6, style: 'normal',
-      centerLight: '#fffbd0', centerDark: '#e8b800' },
+    // 2 — ivory bloom with ice-blue accents (month 3)
+    { bloomSize: '40px', petalLight: '#ffffff', petalDark: '#78bee7', petalCount: 6, style: 'normal',
+      centerLight: '#f7fdff', centerDark: '#285775' },
     // 3 — magenta
     { bloomSize: '38px', petalLight: '#f0b8d8', petalDark: '#d860a0', petalCount: 6, style: 'normal',
       centerLight: '#fffbd0', centerDark: '#e8b800' },
@@ -106,12 +106,17 @@ const CHARM_SVG = {
         <path d="M16 5.5 L19.5 11.5 L16 15 L12.5 11.5 Z" fill="#f6dbe4" stroke="#c9a96e" stroke-width="0.6"/>
         <path d="M14.3 9.5 L16 6.6 L17.7 9.5" fill="none" stroke="#ffffff" stroke-width="0.6" opacity="0.8"/>
     </svg>`,
+    vip: `<svg class="charm-svg charm-svg--vip" viewBox="0 0 32 32" aria-label="Cita VIP">
+        <path d="M4 6 H28 V11 C25.8 11.5 25.8 15.5 28 16 V26 H4 V16 C6.2 15.5 6.2 11.5 4 11 Z" fill="#0b2438" stroke="#dff4ff" stroke-width="1.3"/>
+        <path d="M8 9 H24" stroke="#66bce9" stroke-width="1" opacity="0.85"/>
+        <text x="16" y="21" text-anchor="middle" fill="#ffffff" font-family="serif" font-size="8" font-weight="700">VIP</text>
+    </svg>`,
 };
 
 const CHARM_DATA = [
     { kind: 'cat',   label: 'mes 1',  threadH: '18px', swingAngle: '5deg',  swingDur: '3.2s', swingDelay: '0.0s' },
     { kind: 'ring',  label: 'mes 2',  threadH: '24px', swingAngle: '-4deg', swingDur: '2.8s', swingDelay: '0.5s' },
-    { kind: 'emoji', icon: '🌸', label: 'mes 3',  threadH: '16px', swingAngle: '6deg',  swingDur: '3.5s', swingDelay: '0.2s' },
+    { kind: 'vip',   label: 'mes 3', threadH: '16px', swingAngle: '6deg',  swingDur: '3.5s', swingDelay: '0.2s' },
     { kind: 'emoji', icon: '✨', label: 'mes 4',  threadH: '22px', swingAngle: '-5deg', swingDur: '2.6s', swingDelay: '0.8s' },
     { kind: 'emoji', icon: '🎵', label: 'mes 5',  threadH: '20px', swingAngle: '4deg',  swingDur: '3.0s', swingDelay: '0.3s' },
     { kind: 'emoji', icon: '🦋', label: 'mes 6',  threadH: '26px', swingAngle: '-6deg', swingDur: '2.9s', swingDelay: '0.6s' },
@@ -210,6 +215,7 @@ function _createCSSFlower(f, index) {
 
     const flower = document.createElement('div');
     flower.className = 'garden-flower';
+    if (f.type === 2) flower.classList.add('garden-flower--midnight');
     flower.style.setProperty('--gf-side',       index % 2 === 0 ? -1 : 1);
     flower.style.setProperty('--gf-rank',       Math.floor(index / 2));
     flower.style.setProperty('--gf-stem-h',     f.stemH);
@@ -405,6 +411,7 @@ function _createCharmEl(charm, iconHTML, label, slot) {
 const CARD_THREAD_COLORS = {
     1: '#c9a96e',   // site gold
     2: '#e6362f',   // Spiderman red
+    3: '#66bce9',   // VIP blue
 };
 const CARD_THREAD_DEFAULT_COLOR = '#c9a96e';
 

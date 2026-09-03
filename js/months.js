@@ -6,7 +6,7 @@ function getUnlockedMonths() {
     let months = (now.getFullYear() - ANNIVERSARY_DATE.getFullYear()) * 12
         + (now.getMonth() - ANNIVERSARY_DATE.getMonth());
     if (now.getDate() < ANNIVERSARY_DATE.getDate()) months--;
-    return Math.max(1, Math.min(months, monthlyLetters.length));
+    return Math.max(UNLOCKED_MONTHS, Math.max(1, Math.min(months, monthlyLetters.length)));
 }
 
 // Unlock date label for card N (e.g. "5 de agosto")
@@ -33,6 +33,7 @@ function buildMonthsGrid() {
         if (isUnlocked) {
             card.classList.add('unlocked');
             if (letter.month === 2) card.classList.add('month-card--spiderman');
+            if (letter.month === 3) card.classList.add('month-card--vip');
             card.innerHTML = `
                 <span class="month-card-icon icon-envelope">
                     <i class="fa-regular fa-envelope-open"></i>
