@@ -34,6 +34,7 @@ function buildMonthsGrid() {
             card.classList.add('unlocked');
             if (letter.month === 2) card.classList.add('month-card--spiderman');
             if (letter.month === 3) card.classList.add('month-card--vip');
+            if (letter.month === 4) card.classList.add('month-card--halloween');
             card.innerHTML = `
                 <span class="month-card-icon icon-envelope">
                     <i class="fa-regular fa-envelope-open"></i>

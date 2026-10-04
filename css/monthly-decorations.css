@@ -438,10 +438,11 @@
     overflow: visible;
 }
 
-.charm-svg--cat  { width: 25px; height: 25px; }
-.charm-svg--ring { width: 22px; height: 22px; }
-.charm-svg--vip  { width: 26px; height: 26px; }
-.charm-svg--spidey { width: 26px; height: 26px; }
+.charm-svg--cat     { width: 25px; height: 25px; }
+.charm-svg--ring    { width: 22px; height: 22px; }
+.charm-svg--vip     { width: 26px; height: 26px; }
+.charm-svg--pumpkin { width: 26px; height: 26px; }
+.charm-svg--spidey  { width: 26px; height: 26px; }
 
 .charm-label {
     font-family: 'Inter', sans-serif;

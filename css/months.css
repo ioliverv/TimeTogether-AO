@@ -198,6 +198,46 @@
     color: #8ed8ff;
 }
 
+/* ─── Month 4: Modern Halloween ─── */
+.month-card.month-card--halloween {
+    background:
+        radial-gradient(circle at 20% 85%, rgba(255, 122, 0, 0.4) 0%, transparent 60%),
+        radial-gradient(circle at 85% 15%, rgba(138, 43, 226, 0.35) 0%, transparent 60%),
+        linear-gradient(145deg, #35154d 0%, #14081c 48%, #361122 100%);
+    border: 1.5px solid #ff7a00;
+    box-shadow: 0 0 16px rgba(255, 122, 0, 0.45), inset 0 0 0 1px rgba(255, 153, 0, 0.25);
+}
+
+.month-card.month-card--halloween::after {
+    content: '🎃';
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 4px rgba(255, 122, 0, 0.8));
+}
+
+.month-card.month-card--halloween.unlocked:hover {
+    border-color: #ff9900;
+    box-shadow: 0 0 22px rgba(255, 153, 0, 0.55), inset 0 0 0 1px rgba(255, 122, 0, 0.4);
+}
+
+.month-card.month-card--halloween .month-card-number,
+.month-card.month-card--halloween .icon-envelope {
+    color: #ffd8a8;
+    text-shadow: 0 0 10px rgba(255, 122, 0, 0.8);
+}
+
+.month-card.month-card--halloween .month-card-label,
+.month-card.month-card--halloween .month-card-hint {
+    color: #ffc480;
+}
+
+.month-card.month-card--halloween .icon-envelope .icon-heart {
+    color: #ff5500;
+}
+
 .month-card.unlocked {
     cursor: pointer;
     border-color: rgba(201, 169, 110, 0.6);

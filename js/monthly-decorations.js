@@ -4,73 +4,97 @@
 // ─── Flower palettes, indexed by month ───
 const FLOWER_TYPES = [
     // 0 — cat face (month 1)
-    { bloomSize: '38px', petalLight: '#ffffff', petalDark: '#d8d4ce', petalCount: 8, style: 'cat',
-      centerLight: '#fff9b0', centerDark: '#e8c000' },
+    {
+        bloomSize: '38px', petalLight: '#ffffff', petalDark: '#d8d4ce', petalCount: 8, style: 'cat',
+        centerLight: '#fff9b0', centerDark: '#e8c000'
+    },
     // 1 — Spiderman: red/blue petals, colours applied per-petal in JS (month 2)
-    { bloomSize: '40px', petalLight: null, petalDark: null, petalCount: 6, style: 'spiderman',
-      centerLight: '#fff099', centerDark: '#ccbb00' },
+    {
+        bloomSize: '40px', petalLight: null, petalDark: null, petalCount: 6, style: 'spiderman',
+        centerLight: '#fff099', centerDark: '#ccbb00'
+    },
     // 2 — ivory bloom with ice-blue accents (month 3)
-    { bloomSize: '40px', petalLight: '#ffffff', petalDark: '#78bee7', petalCount: 6, style: 'normal',
-      centerLight: '#f7fdff', centerDark: '#285775' },
-    // 3 — magenta
-    { bloomSize: '38px', petalLight: '#f0b8d8', petalDark: '#d860a0', petalCount: 6, style: 'normal',
-      centerLight: '#fffbd0', centerDark: '#e8b800' },
+    {
+        bloomSize: '40px', petalLight: '#ffffff', petalDark: '#78bee7', petalCount: 6, style: 'normal',
+        centerLight: '#f7fdff', centerDark: '#285775'
+    },
+    // 3 — Cempasúchil (Día de Muertos / Halloween)
+    {
+        bloomSize: '44px', petalLight: '#ffb300', petalDark: '#e65100', petalCount: 20, style: 'daisy',
+        centerLight: '#ff8f00', centerDark: '#bf360c'
+    },
     // 4 — lavender
-    { bloomSize: '32px', petalLight: '#e0ccf5', petalDark: '#9855c8', petalCount: 6, style: 'normal',
-      centerLight: '#fffbd0', centerDark: '#e8b800' },
+    {
+        bloomSize: '32px', petalLight: '#e0ccf5', petalDark: '#9855c8', petalCount: 6, style: 'normal',
+        centerLight: '#fffbd0', centerDark: '#e8b800'
+    },
     // 5 — baby pink
-    { bloomSize: '36px', petalLight: '#fce4ec', petalDark: '#f06890', petalCount: 6, style: 'normal',
-      centerLight: '#fffbd0', centerDark: '#e8b800' },
+    {
+        bloomSize: '36px', petalLight: '#fce4ec', petalDark: '#f06890', petalCount: 6, style: 'normal',
+        centerLight: '#fffbd0', centerDark: '#e8b800'
+    },
     // 6 — deep pink
-    { bloomSize: '34px', petalLight: '#ffccdd', petalDark: '#e85080', petalCount: 6, style: 'normal',
-      centerLight: '#fffbd0', centerDark: '#e8b800' },
+    {
+        bloomSize: '34px', petalLight: '#ffccdd', petalDark: '#e85080', petalCount: 6, style: 'normal',
+        centerLight: '#fffbd0', centerDark: '#e8b800'
+    },
     // 7 — coral
-    { bloomSize: '38px', petalLight: '#ffd0b8', petalDark: '#f07848', petalCount: 6, style: 'normal',
-      centerLight: '#fffbd0', centerDark: '#e8b800' },
+    {
+        bloomSize: '38px', petalLight: '#ffd0b8', petalDark: '#f07848', petalCount: 6, style: 'normal',
+        centerLight: '#fffbd0', centerDark: '#e8b800'
+    },
     // 8 — purple
-    { bloomSize: '30px', petalLight: '#f0e0f8', petalDark: '#a060c0', petalCount: 6, style: 'normal',
-      centerLight: '#fffbd0', centerDark: '#e8b800' },
+    {
+        bloomSize: '30px', petalLight: '#f0e0f8', petalDark: '#a060c0', petalCount: 6, style: 'normal',
+        centerLight: '#fffbd0', centerDark: '#e8b800'
+    },
     // 9 — sunflower
-    { bloomSize: '42px', petalLight: '#fff9c4', petalDark: '#f8cc20', petalCount: 8, style: 'daisy',
-      centerLight: '#8b4a00', centerDark: '#5a2e00' },
+    {
+        bloomSize: '42px', petalLight: '#fff9c4', petalDark: '#f8cc20', petalCount: 8, style: 'daisy',
+        centerLight: '#8b4a00', centerDark: '#5a2e00'
+    },
     // 10 — light pink
-    { bloomSize: '32px', petalLight: '#fce4ec', petalDark: '#ef607a', petalCount: 6, style: 'normal',
-      centerLight: '#fffbd0', centerDark: '#e8b800' },
+    {
+        bloomSize: '32px', petalLight: '#fce4ec', petalDark: '#ef607a', petalCount: 6, style: 'normal',
+        centerLight: '#fffbd0', centerDark: '#e8b800'
+    },
     // 11 — gold (anniversary)
-    { bloomSize: '44px', petalLight: '#fff8e8', petalDark: '#c9a96e', petalCount: 6, style: 'normal',
-      centerLight: '#fff8cc', centerDark: '#c9a96e' },
+    {
+        bloomSize: '44px', petalLight: '#fff8e8', petalDark: '#c9a96e', petalCount: 6, style: 'normal',
+        centerLight: '#fff8cc', centerDark: '#c9a96e'
+    },
 ];
 
 // ─── Stem & animation timing; x placement is derived from the index ───
 const GARDEN_FLOWERS = [
-    { type: 0,  stemH: '28px', swayAngle: '5deg',  swayDur: '3.2s', swayDelay: '0s',   growDelay: '0.2s' },
-    { type: 1,  stemH: '40px', swayAngle: '-4deg', swayDur: '2.8s', swayDelay: '0.5s', growDelay: '0.4s' },
-    { type: 2,  stemH: '22px', swayAngle: '6deg',  swayDur: '3.6s', swayDelay: '0.9s', growDelay: '0.6s' },
-    { type: 3,  stemH: '36px', swayAngle: '-3deg', swayDur: '3.0s', swayDelay: '0.2s', growDelay: '0.8s' },
-    { type: 4,  stemH: '30px', swayAngle: '4deg',  swayDur: '2.6s', swayDelay: '0.7s', growDelay: '1.0s' },
-    { type: 5,  stemH: '32px', swayAngle: '-5deg', swayDur: '3.4s', swayDelay: '0.3s', growDelay: '1.2s' },
-    { type: 6,  stemH: '25px', swayAngle: '4deg',  swayDur: '2.9s', swayDelay: '0.8s', growDelay: '1.4s' },
-    { type: 7,  stemH: '38px', swayAngle: '-6deg', swayDur: '3.1s', swayDelay: '0.1s', growDelay: '1.6s' },
-    { type: 8,  stemH: '28px', swayAngle: '5deg',  swayDur: '2.7s', swayDelay: '0.6s', growDelay: '1.8s' },
-    { type: 9,  stemH: '20px', swayAngle: '-4deg', swayDur: '3.3s', swayDelay: '1.0s', growDelay: '2.0s' },
-    { type: 10, stemH: '26px', swayAngle: '3deg',  swayDur: '3.5s', swayDelay: '0.4s', growDelay: '2.2s' },
+    { type: 0, stemH: '28px', swayAngle: '5deg', swayDur: '3.2s', swayDelay: '0s', growDelay: '0.2s' },
+    { type: 1, stemH: '40px', swayAngle: '-4deg', swayDur: '2.8s', swayDelay: '0.5s', growDelay: '0.4s' },
+    { type: 2, stemH: '22px', swayAngle: '6deg', swayDur: '3.6s', swayDelay: '0.9s', growDelay: '0.6s' },
+    { type: 3, stemH: '36px', swayAngle: '-3deg', swayDur: '3.0s', swayDelay: '0.2s', growDelay: '0.8s' },
+    { type: 4, stemH: '30px', swayAngle: '4deg', swayDur: '2.6s', swayDelay: '0.7s', growDelay: '1.0s' },
+    { type: 5, stemH: '32px', swayAngle: '-5deg', swayDur: '3.4s', swayDelay: '0.3s', growDelay: '1.2s' },
+    { type: 6, stemH: '25px', swayAngle: '4deg', swayDur: '2.9s', swayDelay: '0.8s', growDelay: '1.4s' },
+    { type: 7, stemH: '38px', swayAngle: '-6deg', swayDur: '3.1s', swayDelay: '0.1s', growDelay: '1.6s' },
+    { type: 8, stemH: '28px', swayAngle: '5deg', swayDur: '2.7s', swayDelay: '0.6s', growDelay: '1.8s' },
+    { type: 9, stemH: '20px', swayAngle: '-4deg', swayDur: '3.3s', swayDelay: '1.0s', growDelay: '2.0s' },
+    { type: 10, stemH: '26px', swayAngle: '3deg', swayDur: '3.5s', swayDelay: '0.4s', growDelay: '2.2s' },
     { type: 11, stemH: '34px', swayAngle: '-5deg', swayDur: '2.8s', swayDelay: '0.2s', growDelay: '2.4s' },
 ];
 
-// ─── Constellation: 12 stars tracing a heart, in viewport % ───
+// ─── Constellation: 12 stars forming a beautiful alternating starry arch across the top ───
 const STAR_POSITIONS = [
-    { x: 33, y: 16 },  //  1 — upper-left lobe
-    { x: 18, y: 28 },  //  2 — left arc, top
-    { x: 11, y: 43 },  //  3 — left side
-    { x: 18, y: 59 },  //  4 — left arc, bottom
-    { x: 34, y: 71 },  //  5 — lower left
-    { x: 50, y: 80 },  //  6 — bottom point
-    { x: 66, y: 71 },  //  7 — lower right
-    { x: 82, y: 59 },  //  8 — right arc, bottom
-    { x: 89, y: 43 },  //  9 — right side
-    { x: 82, y: 28 },  // 10 — right arc, top
-    { x: 67, y: 16 },  // 11 — upper-right lobe
-    { x: 50, y: 27 },  // 12 — centre dip, closes the heart
+    { x: 10, y: 30 },  //  1 — far left, lower
+    { x: 17, y: 18 },  //  2 — left, upper
+    { x: 25, y: 28 },  //  3 — left, lower
+    { x: 32, y: 15 },  //  4 — mid-left, upper
+    { x: 40, y: 26 },  //  5 — mid-left, lower
+    { x: 47, y: 12 },  //  6 — center-left, highest
+    { x: 53, y: 12 },  //  7 — center-right, highest
+    { x: 60, y: 26 },  //  8 — mid-right, lower
+    { x: 68, y: 15 },  //  9 — mid-right, upper
+    { x: 75, y: 28 },  // 10 — right, lower
+    { x: 83, y: 18 },  // 11 — right, upper
+    { x: 90, y: 30 },  // 12 — far right, lower
 ];
 
 const STAR_SIZES = [
@@ -111,20 +135,62 @@ const CHARM_SVG = {
         <path d="M8 9 H24" stroke="#66bce9" stroke-width="1" opacity="0.85"/>
         <text x="16" y="21" text-anchor="middle" fill="#ffffff" font-family="serif" font-size="8" font-weight="700">VIP</text>
     </svg>`,
+    pumpkin: `<svg class="charm-svg charm-svg--pumpkin" viewBox="0 0 32 32" aria-label="Calabaza">
+        <defs>
+            <linearGradient id="pumpLobe1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ff7b00"/>
+                <stop offset="1" stop-color="#b33600"/>
+            </linearGradient>
+            <linearGradient id="pumpLobe2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ff9100"/>
+                <stop offset="1" stop-color="#d84315"/>
+            </linearGradient>
+            <linearGradient id="pumpLobe3" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffb74d"/>
+                <stop offset="1" stop-color="#e65100"/>
+            </linearGradient>
+            <linearGradient id="pumpGlow" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffee58"/>
+                <stop offset="1" stop-color="#ff9100"/>
+            </linearGradient>
+        </defs>
+
+        <!-- Stem & vine -->
+        <path d="M16 6.5 L15 11 L17 11 Z" fill="#2e7d32"/>
+        <path d="M16 9 Q 19 6, 21 8 Q 23 10, 20 12" fill="none" stroke="#8bc34a" stroke-width="0.8" stroke-linecap="round"/>
+        <!-- Leaf -->
+        <path d="M15 9 C 11 7, 9 10, 12 11 C 14 11.5, 15 9, 15 9 Z" fill="#8bc34a"/>
+
+        <!-- Pumpkin body -->
+        <ellipse cx="10" cy="19.5" rx="5.5" ry="7.5" fill="url(#pumpLobe1)"/>
+        <ellipse cx="22" cy="19.5" rx="5.5" ry="7.5" fill="url(#pumpLobe1)"/>
+        <ellipse cx="12.5" cy="20" rx="5.2" ry="8.2" fill="url(#pumpLobe2)"/>
+        <ellipse cx="19.5" cy="20" rx="5.2" ry="8.2" fill="url(#pumpLobe2)"/>
+        <ellipse cx="16" cy="20.5" rx="5" ry="8.5" fill="url(#pumpLobe3)"/>
+        
+        <!-- Black Face -->
+        <path d="M11.5 17.5 L14 19 L12 19.5 Z" fill="#111111"/>
+        <path d="M20.5 17.5 L18 19 L20 19.5 Z" fill="#111111"/>
+        <path d="M11 21 Q16 25.5 21 21 C19 23.5 13 23.5 11 21 Z" fill="#111111"/>
+        
+        <!-- Magic Sparkles -->
+        <path d="M 5 13 L 5.5 14.5 L 7 15 L 5.5 15.5 L 5 17 L 4.5 15.5 L 3 15 L 4.5 14.5 Z" fill="#ffd54f"/>
+        <path d="M 27 10 L 27.5 11 L 28.5 11.5 L 27.5 12 L 27 13 L 26.5 12 L 25.5 11.5 L 26.5 11 Z" fill="#ffb74d"/>
+    </svg>`,
 };
 
 const CHARM_DATA = [
-    { kind: 'cat',   label: 'mes 1',  threadH: '18px', swingAngle: '5deg',  swingDur: '3.2s', swingDelay: '0.0s' },
-    { kind: 'ring',  label: 'mes 2',  threadH: '24px', swingAngle: '-4deg', swingDur: '2.8s', swingDelay: '0.5s' },
-    { kind: 'vip',   label: 'mes 3', threadH: '16px', swingAngle: '6deg',  swingDur: '3.5s', swingDelay: '0.2s' },
-    { kind: 'emoji', icon: '✨', label: 'mes 4',  threadH: '22px', swingAngle: '-5deg', swingDur: '2.6s', swingDelay: '0.8s' },
-    { kind: 'emoji', icon: '🎵', label: 'mes 5',  threadH: '20px', swingAngle: '4deg',  swingDur: '3.0s', swingDelay: '0.3s' },
-    { kind: 'emoji', icon: '🦋', label: 'mes 6',  threadH: '26px', swingAngle: '-6deg', swingDur: '2.9s', swingDelay: '0.6s' },
-    { kind: 'emoji', icon: '🌊', label: 'mes 7',  threadH: '18px', swingAngle: '5deg',  swingDur: '3.3s', swingDelay: '0.1s' },
-    { kind: 'emoji', icon: '⭐', label: 'mes 8',  threadH: '23px', swingAngle: '-4deg', swingDur: '2.7s', swingDelay: '0.7s' },
-    { kind: 'emoji', icon: '🎆', label: 'mes 9',  threadH: '19px', swingAngle: '6deg',  swingDur: '3.1s', swingDelay: '0.4s' },
+    { kind: 'cat', label: 'mes 1', threadH: '18px', swingAngle: '5deg', swingDur: '3.2s', swingDelay: '0.0s' },
+    { kind: 'ring', label: 'mes 2', threadH: '24px', swingAngle: '-4deg', swingDur: '2.8s', swingDelay: '0.5s' },
+    { kind: 'vip', label: 'mes 3', threadH: '16px', swingAngle: '6deg', swingDur: '3.5s', swingDelay: '0.2s' },
+    { kind: 'pumpkin', label: 'mes 4', threadH: '22px', swingAngle: '-5deg', swingDur: '2.6s', swingDelay: '0.8s' },
+    { kind: 'emoji', icon: '🎵', label: 'mes 5', threadH: '20px', swingAngle: '4deg', swingDur: '3.0s', swingDelay: '0.3s' },
+    { kind: 'emoji', icon: '🦋', label: 'mes 6', threadH: '26px', swingAngle: '-6deg', swingDur: '2.9s', swingDelay: '0.6s' },
+    { kind: 'emoji', icon: '🌊', label: 'mes 7', threadH: '18px', swingAngle: '5deg', swingDur: '3.3s', swingDelay: '0.1s' },
+    { kind: 'emoji', icon: '⭐', label: 'mes 8', threadH: '23px', swingAngle: '-4deg', swingDur: '2.7s', swingDelay: '0.7s' },
+    { kind: 'emoji', icon: '🎆', label: 'mes 9', threadH: '19px', swingAngle: '6deg', swingDur: '3.1s', swingDelay: '0.4s' },
     { kind: 'emoji', icon: '🍂', label: 'mes 10', threadH: '21px', swingAngle: '-5deg', swingDur: '2.8s', swingDelay: '0.9s' },
-    { kind: 'emoji', icon: '☃️', label: 'mes 11', threadH: '17px', swingAngle: '4deg',  swingDur: '3.4s', swingDelay: '0.2s' },
+    { kind: 'emoji', icon: '☃️', label: 'mes 11', threadH: '17px', swingAngle: '4deg', swingDur: '3.4s', swingDelay: '0.2s' },
     { kind: 'emoji', icon: '👑', label: 'mes 12', threadH: '25px', swingAngle: '-3deg', swingDur: '2.5s', swingDelay: '0.5s' },
 ];
 
@@ -200,12 +266,12 @@ function _addSpiderFace(bloom) {
 
 // ─── Full CSS flower; index drives placement ───
 function _createCSSFlower(f, index) {
-    const ft         = FLOWER_TYPES[f.type] || FLOWER_TYPES[2];
+    const ft = FLOWER_TYPES[f.type] || FLOWER_TYPES[2];
     const petalCount = ft.petalCount || 6;
-    const style      = ft.style      || 'normal';
-    const isDaisy    = style === 'daisy';
-    const isSpider   = style === 'spiderman';
-    const isCat      = style === 'cat';
+    const style = ft.style || 'normal';
+    const isDaisy = style === 'daisy';
+    const isSpider = style === 'spiderman';
+    const isCat = style === 'cat';
 
     // Alternating petal colours for the Spiderman bloom
     const SPIDER_COLORS = [
@@ -216,17 +282,17 @@ function _createCSSFlower(f, index) {
     const flower = document.createElement('div');
     flower.className = 'garden-flower';
     if (f.type === 2) flower.classList.add('garden-flower--midnight');
-    flower.style.setProperty('--gf-side',       index % 2 === 0 ? -1 : 1);
-    flower.style.setProperty('--gf-rank',       Math.floor(index / 2));
-    flower.style.setProperty('--gf-stem-h',     f.stemH);
+    flower.style.setProperty('--gf-side', index % 2 === 0 ? -1 : 1);
+    flower.style.setProperty('--gf-rank', Math.floor(index / 2));
+    flower.style.setProperty('--gf-stem-h', f.stemH);
     flower.style.setProperty('--gf-sway-angle', f.swayAngle);
-    flower.style.setProperty('--gf-sway-dur',   f.swayDur);
+    flower.style.setProperty('--gf-sway-dur', f.swayDur);
     flower.style.setProperty('--gf-sway-delay', f.swayDelay);
     flower.style.setProperty('--gf-grow-delay', f.growDelay);
     flower.style.setProperty('--gf-bloom-size', ft.bloomSize);
     if (!isSpider) {
         flower.style.setProperty('--gf-petal-light', ft.petalLight);
-        flower.style.setProperty('--gf-petal-dark',  ft.petalDark);
+        flower.style.setProperty('--gf-petal-dark', ft.petalDark);
     }
 
     // Petals
@@ -235,7 +301,7 @@ function _createCSSFlower(f, index) {
 
     for (let i = 0; i < petalCount; i++) {
         const petal = document.createElement('div');
-        const rot   = (i / petalCount) * 360;
+        const rot = (i / petalCount) * 360;
 
         if (isDaisy || isCat) {
             petal.className = 'flower-petal flower-petal--daisy';
@@ -269,7 +335,7 @@ function _createCSSFlower(f, index) {
     }
 
     // Stem + leaves
-    const stem  = document.createElement('div');
+    const stem = document.createElement('div');
     stem.className = 'flower-stem';
     const leafL = document.createElement('div');
     leafL.className = 'flower-leaf-l';
@@ -342,10 +408,10 @@ function buildConstellation(unlocked, containerId) {
         const star = document.createElement('div');
         star.className = 'star-point';
         star.style.left = `${pos.x}%`;
-        star.style.top  = `${pos.y}%`;
-        star.style.setProperty('--sp-size',          STAR_SIZES[i]);
-        star.style.setProperty('--sp-appear-delay',  `${i * 0.1}s`);
-        star.style.setProperty('--sp-twinkle-dur',   `${2.0 + (i % 5) * 0.35}s`);
+        star.style.top = `${pos.y}%`;
+        star.style.setProperty('--sp-size', STAR_SIZES[i]);
+        star.style.setProperty('--sp-appear-delay', `${i * 0.1}s`);
+        star.style.setProperty('--sp-twinkle-dur', `${2.0 + (i % 5) * 0.35}s`);
         star.style.setProperty('--sp-twinkle-delay', `${(i % 4) * 0.5}s`);
         star.textContent = '★';
         container.appendChild(star);
@@ -389,10 +455,10 @@ function buildNecklace(unlocked, containerId) {
 function _createCharmEl(charm, iconHTML, label, slot) {
     const el = document.createElement('div');
     el.className = 'necklace-charm';
-    el.style.setProperty('--ch-thread-h',     charm.threadH);
-    el.style.setProperty('--ch-swing-angle',  charm.swingAngle);
-    el.style.setProperty('--ch-swing-dur',    charm.swingDur);
-    el.style.setProperty('--ch-swing-delay',  charm.swingDelay);
+    el.style.setProperty('--ch-thread-h', charm.threadH);
+    el.style.setProperty('--ch-swing-angle', charm.swingAngle);
+    el.style.setProperty('--ch-swing-dur', charm.swingDur);
+    el.style.setProperty('--ch-swing-delay', charm.swingDelay);
     el.style.setProperty('--ch-appear-delay', `${slot * 0.09}s`);
 
     el.innerHTML = `
@@ -412,6 +478,7 @@ const CARD_THREAD_COLORS = {
     1: '#c9a96e',   // site gold
     2: '#e6362f',   // Spiderman red
     3: '#66bce9',   // VIP blue
+    4: '#ff7a18',   // Pumpkin orange
 };
 const CARD_THREAD_DEFAULT_COLOR = '#c9a96e';
 
@@ -446,11 +513,11 @@ function buildCardThread() {
     const paths = [];
 
     cards.slice(0, -1).forEach((cardA, i) => {
-        const cardB   = cards[i + 1];
-        const monthA  = parseInt(cardA.querySelector('.month-card-number').textContent, 10);
-        const monthB  = parseInt(cardB.querySelector('.month-card-number').textContent, 10);
-        const colorA  = _cardThreadColor(monthA);
-        const colorB  = _cardThreadColor(monthB);
+        const cardB = cards[i + 1];
+        const monthA = parseInt(cardA.querySelector('.month-card-number').textContent, 10);
+        const monthB = parseInt(cardB.querySelector('.month-card-number').textContent, 10);
+        const colorA = _cardThreadColor(monthA);
+        const colorB = _cardThreadColor(monthB);
 
         const ra = cardA.getBoundingClientRect();
         const rb = cardB.getBoundingClientRect();
@@ -511,7 +578,7 @@ function buildCardThread() {
         paths.forEach(({ path, sheen, delay }) => {
             const len = path.getTotalLength();
             [path, sheen].forEach(el => {
-                el.style.strokeDasharray  = len;
+                el.style.strokeDasharray = len;
                 el.style.strokeDashoffset = len;
             });
             void path.getBoundingClientRect(); // force reflow before animating

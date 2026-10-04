@@ -37,6 +37,7 @@ const monthlyLetters = [
     },
     {
         month: 4,
+        standaloneUrl: 'https://ioliverv.github.io/4Month-A-O/',
         paragraphs: [
             '<span class="first-letter">O</span>tra vez tú por aquí… 😏',
             'Las cartas bonitas se leen en su fecha, no antes.',
