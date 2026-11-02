@@ -23,10 +23,10 @@ const FLOWER_TYPES = [
         bloomSize: '44px', petalLight: '#ffb300', petalDark: '#e65100', petalCount: 20, style: 'daisy',
         centerLight: '#ff8f00', centerDark: '#bf360c'
     },
-    // 4 — lavender
+    // 4 — black rose for the fifth month
     {
-        bloomSize: '32px', petalLight: '#e0ccf5', petalDark: '#9855c8', petalCount: 6, style: 'normal',
-        centerLight: '#fffbd0', centerDark: '#e8b800'
+        bloomSize: '44px', petalLight: '#514054', petalDark: '#110b15', petalCount: 9, style: 'marigold',
+        centerLight: '#523047', centerDark: '#170c1a'
     },
     // 5 — baby pink
     {
@@ -135,6 +135,15 @@ const CHARM_SVG = {
         <path d="M8 9 H24" stroke="#66bce9" stroke-width="1" opacity="0.85"/>
         <text x="16" y="21" text-anchor="middle" fill="#ffffff" font-family="serif" font-size="8" font-weight="700">VIP</text>
     </svg>`,
+    skull: `<svg class="charm-svg charm-svg--skull" viewBox="0 0 32 32" role="img" aria-label="Calavera decorada">
+        <path d="M6 14 C6 7 10 4 16 4 C22 4 26 7 26 14 C26 18 24 20 22 21 L21 27 Q16 30 11 27 L10 21 C8 20 6 18 6 14 Z" fill="#fff4df" stroke="#a85544" stroke-width="1"/>
+        <circle cx="11.5" cy="15" r="3.3" fill="#5b1a48" stroke="#ee9a35" stroke-width="1"/>
+        <circle cx="20.5" cy="15" r="3.3" fill="#5b1a48" stroke="#ee9a35" stroke-width="1"/>
+        <path d="M10 15 l1.5 1.4 L13 15 M19 15 l1.5 1.4 L22 15" fill="none" stroke="#ff8b9a" stroke-width="1"/>
+        <path d="M16 17 l-1.5 2.5 h3 Z" fill="#a85544"/>
+        <path d="M12 23 Q16 25 20 23 M14 23 v3 M18 23 v3" fill="none" stroke="#713352" stroke-width=".8"/>
+        <circle cx="16" cy="7" r="2" fill="#f5a528"/><circle cx="12.8" cy="8" r="1.4" fill="#e75b77"/><circle cx="19.2" cy="8" r="1.4" fill="#e75b77"/>
+    </svg>`,
     pumpkin: `<svg class="charm-svg charm-svg--pumpkin" viewBox="0 0 32 32" aria-label="Calabaza">
         <defs>
             <linearGradient id="pumpLobe1" x1="0" y1="0" x2="0" y2="1">
@@ -184,7 +193,7 @@ const CHARM_DATA = [
     { kind: 'ring', label: 'mes 2', threadH: '24px', swingAngle: '-4deg', swingDur: '2.8s', swingDelay: '0.5s' },
     { kind: 'vip', label: 'mes 3', threadH: '16px', swingAngle: '6deg', swingDur: '3.5s', swingDelay: '0.2s' },
     { kind: 'pumpkin', label: 'mes 4', threadH: '22px', swingAngle: '-5deg', swingDur: '2.6s', swingDelay: '0.8s' },
-    { kind: 'emoji', icon: '🎵', label: 'mes 5', threadH: '20px', swingAngle: '4deg', swingDur: '3.0s', swingDelay: '0.3s' },
+    { kind: 'skull', label: 'mes 5', threadH: '20px', swingAngle: '4deg', swingDur: '3.0s', swingDelay: '0.3s' },
     { kind: 'emoji', icon: '🦋', label: 'mes 6', threadH: '26px', swingAngle: '-6deg', swingDur: '2.9s', swingDelay: '0.6s' },
     { kind: 'emoji', icon: '🌊', label: 'mes 7', threadH: '18px', swingAngle: '5deg', swingDur: '3.3s', swingDelay: '0.1s' },
     { kind: 'emoji', icon: '⭐', label: 'mes 8', threadH: '23px', swingAngle: '-4deg', swingDur: '2.7s', swingDelay: '0.7s' },
@@ -270,6 +279,7 @@ function _createCSSFlower(f, index) {
     const petalCount = ft.petalCount || 6;
     const style = ft.style || 'normal';
     const isDaisy = style === 'daisy';
+    const isMarigold = style === 'marigold';
     const isSpider = style === 'spiderman';
     const isCat = style === 'cat';
 
@@ -282,6 +292,7 @@ function _createCSSFlower(f, index) {
     const flower = document.createElement('div');
     flower.className = 'garden-flower';
     if (f.type === 2) flower.classList.add('garden-flower--midnight');
+    if (isMarigold) flower.classList.add('garden-flower--marigold');
     flower.style.setProperty('--gf-side', index % 2 === 0 ? -1 : 1);
     flower.style.setProperty('--gf-rank', Math.floor(index / 2));
     flower.style.setProperty('--gf-stem-h', f.stemH);
@@ -303,7 +314,9 @@ function _createCSSFlower(f, index) {
         const petal = document.createElement('div');
         const rot = (i / petalCount) * 360;
 
-        if (isDaisy || isCat) {
+        if (isMarigold) {
+            petal.className = 'flower-petal flower-petal--marigold';
+        } else if (isDaisy || isCat) {
             petal.className = 'flower-petal flower-petal--daisy';
         } else if (isSpider) {
             petal.className = 'flower-petal flower-petal--spider';
@@ -319,7 +332,25 @@ function _createCSSFlower(f, index) {
     }
 
     // Centre dot, or a face for the cat / Spiderman blooms
-    if (!isCat && !isSpider) {
+    if (isMarigold) {
+        const center = document.createElement('span');
+        center.className = 'flower-skull-center';
+        center.innerHTML = CHARM_SVG.skull;
+        center.setAttribute('aria-hidden', 'true');
+        bloom.appendChild(center);
+    } else if (f.type === 2) {
+        const center = document.createElement('span');
+        center.className = 'flower-glasses-center';
+        center.innerHTML = `<svg viewBox="0 0 40 24" aria-hidden="true"><path d="M2 8h4m28 0h4M16 9q4-3 8 0" fill="none" stroke="#d9efff" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="6.5" fill="#101827" stroke="#a7dcf5" stroke-width="1.5"/><circle cx="29" cy="11" r="6.5" fill="#101827" stroke="#a7dcf5" stroke-width="1.5"/><path d="M8 8l3-2m15 2 3-2" stroke="#91d8f6" stroke-width="1" opacity=".8"/></svg>`;
+        center.setAttribute('aria-hidden', 'true');
+        bloom.appendChild(center);
+    } else if (f.type === 3) {
+        const center = document.createElement('span');
+        center.className = 'flower-pumpkin-center';
+        center.innerHTML = CHARM_SVG.pumpkin;
+        center.setAttribute('aria-hidden', 'true');
+        bloom.appendChild(center);
+    } else if (!isCat && !isSpider) {
         const center = document.createElement('div');
         center.className = 'flower-center-dot';
         if (ft.centerLight && ft.centerDark) {
@@ -358,7 +389,9 @@ function buildGarden(unlocked, containerId) {
 
     const count = Math.min(unlocked, GARDEN_FLOWERS.length);
     GARDEN_FLOWERS.slice(0, count).forEach((f, i) => {
-        container.appendChild(_createCSSFlower(f, i));
+        const flower = _createCSSFlower(f, i);
+        flower.style.setProperty('--gf-position', i - (count - 1) / 2);
+        container.appendChild(flower);
     });
 }
 

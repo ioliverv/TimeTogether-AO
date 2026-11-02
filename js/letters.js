@@ -46,6 +46,7 @@ const monthlyLetters = [
     },
     {
         month: 5,
+        standaloneUrl: 'https://ioliverv.github.io/5Month-A-O/',
         paragraphs: [
             '<span class="first-letter">N</span>o no no, aún no 😌',
             'Sé que la curiosidad es mucha, pero esta sorpresa se guarda hasta su día.',

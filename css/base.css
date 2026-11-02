@@ -199,6 +199,10 @@ body {
     top: 20px;
     right: 25px;
 }
+.scene-months .watermark-months-left {
+    left: 25px;
+    right: auto;
+}
 
 .watermark-top-left {
     top: 20px;
